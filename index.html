@@ -26,9 +26,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Only the two site fonts: Herr Von Muellerhoff (primary) + Barlow (secondary) -->
+    
+    <link rel="preload" href="./assets/font/soligant.ttf" as="font" type="font/ttf" crossorigin />
+
+    <!-- Secondary font: Barlow only -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Barlow:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
@@ -44,17 +47,29 @@
 
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
 
-    <!-- Tailwind CSS (Play CDN, pinned). For best performance, replace this with a compiled
-         Tailwind build before launch. The config below restores the font-primary / font-secondary utilities. -->
+    <!-- Tailwind CSS (Play CDN, pinned). Replace with a compiled build before launch. -->
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script src="./assets/js/tailwind-config.js"></script>
 
-    <!-- Hero carousel, font-face and Swiper pagination overrides -->
+    <!-- Hero carousel and Swiper pagination overrides -->
     <link rel="stylesheet" href="./assets/css/custom.css" />
 
-    <!-- Fonts: font-primary (set in tailwind-config) + font-secondary = Barlow.
-         Anything without an explicit font class falls back to font-secondary. -->
     <style>
+      /* ===== Primary font: Soligant (the only primary font) ===== */
+      @font-face {
+        font-family: "Soligant";
+        src: url("./assets/font/soligant.ttf") format("truetype");
+        font-weight: 100 900; /* one file only, so the browser never fakes bold */
+        font-style: normal;
+        font-display: swap;
+      }
+      .font-primary,
+      .hero2__brand,
+      .hero2__title {
+        font-family: "Soligant", serif !important;
+      }
+
+      /* ===== Secondary font: Barlow ===== */
       body,
       button,
       input,
@@ -176,29 +191,15 @@
   <body
     class="font-secondary antialiased flex flex-col min-h-screen overflow-x-clip max-w-[100vw] bg-[#f3e9d8] bg-repeat [background-image:url('./assets/bg-pattern.webp')] [background-size:1000px_auto]"
   >
-    <!-- ============ PAGE LOADER ============
-         1) big white panel shrinks  2) brand panel slides up, text rises letter by letter (masked)
-         3) white rises again from the bottom, text turns black  4) text slides up out, loader wipes away -->
-    <div id="loader" role="status" aria-live="polite" aria-label="Loading Jyoti Studio" class="fixed inset-0 z-[200] overflow-hidden">
-
-      <!-- brand panel + light text -->
-      <div data-l-brand class="absolute inset-0 flex flex-col items-center justify-center bg-[#3a0d12] px-6 text-center">
+    <!-- ============ PAGE LOADER (the only loader) ============
+         1) full-height cream background  2) brand panel slides up over it
+         3) text rises letter by letter (masked)  4) letters slide out, loader slides up -->
+    <div id="loader" role="status" aria-live="polite" aria-label="Loading Jyoti Studio"
+         class="fixed inset-0 z-[200] overflow-hidden bg-[#f3e9d8] bg-repeat [background-image:url('./assets/bg-pattern.webp')] [background-size:1000px_auto]">
+      <div data-l-brand class="absolute inset-0 flex flex-col items-center justify-center bg-[#3a0d12] px-6 text-center will-change-transform">
         <div class="flex flex-col items-end">
-          <p data-l-tag class="mb-1 whitespace-nowrap font-primary lowercase text-xl sm:text-2xl lg:text-4xl leading-none text-[#e8c9a0]" aria-hidden="true">Photography</p>
-          <p data-l-word class="whitespace-nowrap font-primary lowercase text-6xl sm:text-7xl lg:text-9xl leading-none text-[#f3e9d8]" aria-hidden="true">Jyoti Studio</p>
-        </div>
-      </div>
-
-      <!-- big white panel (full height, shrinks away) -->
-      <div data-l-white1 class="absolute inset-x-0 top-0 h-full bg-[#f3e9d8] bg-repeat [background-image:url('./assets/bg-pattern.webp')] [background-size:1000px_auto]"></div>
-
-      <!-- white panel that rises from the bottom, carries the black copy of the text -->
-      <div data-l-white2 class="absolute inset-x-0 bottom-0 h-0 overflow-hidden bg-[#f3e9d8] bg-repeat [background-image:url('./assets/bg-pattern.webp')] [background-size:1000px_auto]">
-        <div data-l-inner class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center px-6 text-center">
-          <div class="flex flex-col items-end">
-            <p data-l-tag-dark class="mb-1 whitespace-nowrap font-primary lowercase text-xl sm:text-2xl lg:text-4xl leading-none text-[#5a3326]" aria-hidden="true">Photography</p>
-            <p data-l-word-dark class="whitespace-nowrap font-primary lowercase text-6xl sm:text-7xl lg:text-9xl leading-none text-[#5a3326]" aria-hidden="true">Jyoti Studio</p>
-          </div>
+          <p data-l-tag class="mb-2 whitespace-nowrap font-primary uppercase tracking-[0.3em] text-sm sm:text-base lg:text-xl leading-none text-[#e8c9a0]" aria-hidden="true">Photography</p>
+          <p data-l-word class="whitespace-nowrap font-primary text-5xl sm:text-7xl lg:text-8xl leading-none text-[#f3e9d8]" aria-hidden="true">Jyoti Studio</p>
         </div>
       </div>
     </div>
@@ -230,7 +231,7 @@
 
       <!-- ============ 1. HERO ============ -->
       <section id="home" class="hero2" aria-label="Jyoti Studio hero">
-        <!-- strip gallery background (Tailwind only) -->
+        <!-- strip gallery background (Tailwind only). Mobile shows 3 strips, md and up shows 4. -->
         <div class="absolute inset-0 flex gap-1 overflow-hidden bg-[#0a0a0a]" aria-hidden="true">
           <div class="relative flex-1 min-w-0 overflow-hidden">
             <div data-strip="up" data-dur="34" class="flex flex-col gap-1 pb-1 will-change-transform">
@@ -268,7 +269,8 @@
               <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
             </div>
           </div>
-          <div class="relative flex-1 min-w-0 overflow-hidden">
+          <!-- 4th strip: hidden on mobile so only three vertical strips show -->
+          <div class="relative hidden md:block flex-1 min-w-0 overflow-hidden">
             <div data-strip="down" data-dur="26" class="flex flex-col gap-1 pb-1 will-change-transform">
               <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
               <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
@@ -1280,15 +1282,16 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
 
+    <!-- ============ LOADER SCRIPT (the only loader) ============
+         1) cream bg shows  2) brand panel slides up  3) text rises letter by letter
+         4) letters slide out, then the whole loader slides up and is removed -->
     <script>
       (function () {
         var el = document.getElementById('loader');
         if (!el) return;
         var root = document.documentElement;
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var q = function (n) { return el.querySelector('[' + n + ']'); };
-        var brand = q('data-l-brand'), white1 = q('data-l-white1'), white2 = q('data-l-white2'), inner = q('data-l-inner');
-
+        var brand = el.querySelector('[data-l-brand]');
         var loaded = document.readyState === 'complete';
         var introDone = false, outroStarted = false;
 
@@ -1302,22 +1305,22 @@
           window.dispatchEvent(new Event('loaderdone'));
         }
 
-        // Fallback: no GSAP / reduced motion -> simple fade
+        // Fallback: no GSAP or reduced motion
         if (!window.gsap || reduce) {
           var fade = function () { el.style.transition = 'opacity .4s'; el.style.opacity = '0'; setTimeout(remove, 450); };
-          if (loaded) { fade(); } else { window.addEventListener('load', fade); }
+          if (loaded) fade(); else window.addEventListener('load', fade);
           setTimeout(function () { if (document.getElementById('loader')) fade(); }, 7000);
           return;
         }
 
-        // Split text into characters, each inside an overflow-hidden mask (the "frame")
+        // Split text into letters, each inside an overflow-hidden mask
         function split(node) {
           var txt = node.textContent;
           node.textContent = '';
           var chars = [];
           txt.split('').forEach(function (c) {
             var mask = document.createElement('span');
-            mask.className = 'inline-block overflow-hidden align-bottom pt-[0.15em] pb-[0.25em] -mt-[0.15em] -mb-[0.25em]';
+            mask.className = 'inline-block overflow-hidden align-bottom pt-[0.2em] pb-[0.3em] -mt-[0.2em] -mb-[0.3em]';
             var ch = document.createElement('span');
             ch.className = 'inline-block will-change-transform';
             ch.textContent = c === ' ' ? '\u00A0' : c;
@@ -1327,41 +1330,44 @@
           });
           return chars;
         }
-        var wordL = split(q('data-l-word')), tagL = split(q('data-l-tag'));
-        var wordD = split(q('data-l-word-dark')), tagD = split(q('data-l-tag-dark'));
+        var wordC = split(el.querySelector('[data-l-word]'));
+        var tagC  = split(el.querySelector('[data-l-tag]'));
 
-        // black copy must line up exactly with the light copy: give it the full viewport height
-        function sizeInner() { inner.style.height = el.offsetHeight + 'px'; }
-        sizeInner();
-        window.addEventListener('resize', sizeInner);
+        // Start state: brand panel below the screen, letters below their masks
+        gsap.set(brand, { yPercent: 100 });
+        gsap.set(wordC.concat(tagC), { yPercent: 180 });
 
-        // starting state
-        gsap.set(brand, { yPercent: 100, y: -2 }); // 2px overlap under the white edge = no gap line
-        gsap.set(wordL.concat(tagL), { yPercent: 170 }); // fully below the mask (no peeking tops)
-
-        // INTRO: white shrinks + brand slides up, then letters rise one by one
-        var intro = gsap.timeline({ onComplete: function () { introDone = true; tryOutro(); } });
-        intro
-          .to(white1, { height: 0, duration: 1.1, ease: 'power3.inOut' }, 0.35)
-          .to(brand, { yPercent: 0, y: 0, duration: 1.1, ease: 'power3.inOut' }, 0.35)
-          .to(wordL, { yPercent: 0, duration: 0.9, ease: 'power4.out', stagger: 0.06 }, '-=0.2')
-          .to(tagL, { yPercent: 0, duration: 0.7, ease: 'power4.out', stagger: 0.03 }, '-=0.5')
-          .to({}, { duration: 0.6 }); // hold
-
-        // OUTRO: white rises from the bottom (text turns black), letters slide up out, loader wipes away
-        function tryOutro() {
+        // Step 4: letters slide out, then brand + cream slide up together
+        function outro() {
           if (outroStarted || !introDone || !loaded) return;
           outroStarted = true;
-          gsap.timeline({ onComplete: function () { window.removeEventListener('resize', sizeInner); remove(); } })
-            .to(white2, { height: '100%', duration: 0.95, ease: 'power3.inOut' }, 0)
-            .to(wordD.concat(tagD), { yPercent: -160, duration: 0.7, ease: 'power3.in', stagger: 0.035 }, '+=0.1')
-            .to(el, { yPercent: -100, duration: 0.9, ease: 'power3.inOut' }, '+=0.05'); // starts only after every letter has left
+          gsap.timeline({ onComplete: remove })
+            .to(tagC.concat(wordC), { yPercent: -180, duration: 0.7, ease: 'power3.in', stagger: 0.03 })
+            .to(el, { yPercent: -100, duration: 1.1, ease: 'power4.inOut' }, '-=0.2');
         }
 
-        if (!loaded) { window.addEventListener('load', function () { loaded = true; tryOutro(); }); }
+        // Steps 1-3: cream shows, brand panel slides up, text rises
+        function startIntro() {
+          gsap.timeline({ onComplete: function () { introDone = true; outro(); } })
+            .to(brand, { yPercent: 0, duration: 1.2, ease: 'power4.inOut' }, 0.2)
+            .to(wordC, { yPercent: 0, duration: 1, ease: 'power4.out', stagger: 0.06 }, '-=0.45')
+            .to(tagC,  { yPercent: 0, duration: 0.8, ease: 'power4.out', stagger: 0.03 }, '-=0.7')
+            .to({}, { duration: 0.6 }); // hold
+        }
 
-        // safety net so the page never stays covered
-        setTimeout(function () { loaded = true; introDone = true; tryOutro(); }, 8000);
+        // Wait for Soligant so the text never flashes in a fallback font
+        var fontsReady = (document.fonts && document.fonts.load)
+          ? Promise.race([
+              document.fonts.load('64px "Soligant"'),
+              new Promise(function (r) { setTimeout(r, 2500); })
+            ])
+          : Promise.resolve();
+        fontsReady.then(startIntro);
+
+        if (!loaded) window.addEventListener('load', function () { loaded = true; outro(); });
+
+        // Safety net: never leave the page covered
+        setTimeout(function () { loaded = true; introDone = true; outro(); }, 9000);
       })();
     </script>
     <script src="./assets/js/swipers.js"></script>
