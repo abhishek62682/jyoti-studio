@@ -12,7 +12,6 @@
       content="Jyoti Studio And Photography captures weddings, pre-wedding shoots, maternity, baby and kids portraits, cinematic films and events in Dombivli, Thane. Book your session today."
     />
 
-    <!-- Social sharing -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Jyoti Studio And Photography" />
     <meta property="og:title" content="Jyoti Studio And Photography | Wedding &amp; Family Photographers" />
@@ -26,10 +25,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    
     <link rel="preload" href="./assets/font/soligant.ttf" as="font" type="font/ttf" crossorigin />
 
-    <!-- Secondary font: Barlow only -->
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -47,19 +44,16 @@
 
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
 
-    <!-- Tailwind CSS (Play CDN, pinned). Replace with a compiled build before launch. -->
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script src="./assets/js/tailwind-config.js"></script>
 
-    <!-- Hero carousel and Swiper pagination overrides -->
     <link rel="stylesheet" href="./assets/css/custom.css" />
 
     <style>
-      /* ===== Primary font: Soligant (the only primary font) ===== */
       @font-face {
         font-family: "Soligant";
         src: url("./assets/font/soligant.ttf") format("truetype");
-        font-weight: 100 900; /* one file only, so the browser never fakes bold */
+        font-weight: 100 900;
         font-style: normal;
         font-display: swap;
       }
@@ -69,7 +63,6 @@
         font-family: "Soligant", serif !important;
       }
 
-      /* ===== Secondary font: Barlow ===== */
       body,
       button,
       input,
@@ -80,7 +73,6 @@
       .font-secondary {
         font-family: "Barlow", sans-serif !important;
       }
-      /* Navbar button: white pill, banner-colour arrow circle */
       .hero2__cta {
         background: #ffffff !important;
         border-color: #ffffff !important;
@@ -97,7 +89,6 @@
       .hero2__cta-icon i {
         color: #ffffff !important;
       }
-      /* Shared button system: pill + arrow circle (matches navbar CTA) */
       .btn {
         display: inline-flex;
         align-items: center;
@@ -139,7 +130,6 @@
       .btn-outline-light:hover { background: #ffffff; color: #3a0d12; border-color: #ffffff; }
       .btn-outline-light:hover .btn__icon { background: #3a0d12; color: #ffffff; }
 
-      /* Offer popup */
       .offer { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 16px; background: rgba(58, 13, 18, 0.65); overflow-y: auto; }
       .offer.is-open { display: flex; animation: offerFade 0.35s ease both; }
       .offer.is-open .offer__box { animation: offerRise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
@@ -156,7 +146,6 @@
       .offer__text { margin: 14px auto 0; max-width: 260px; font-size: 1rem; line-height: 1.55; color: #4b4b4b; }
       .offer__note { margin-top: 16px; font-size: 0.875rem; color: #8a6a55; }
       @media (prefers-reduced-motion: reduce) { .offer.is-open, .offer.is-open .offer__box { animation: none; } }
-      /* Navbar must always be clickable above the hero overlay */
       .hero2__overlay { pointer-events: none; }
       .hero2__nav { z-index: 60; }
       .hero2__nav a { pointer-events: auto; cursor: pointer; }
@@ -167,7 +156,6 @@
       }
     </style>
 
-    <!-- Structured data for search engines -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -191,9 +179,6 @@
   <body
     class="font-secondary antialiased flex flex-col min-h-screen overflow-x-clip max-w-[100vw] bg-[#f3e9d8] bg-repeat [background-image:url('./assets/bg-pattern.webp')] [background-size:1000px_auto]"
   >
-    <!-- ============ PAGE LOADER (the only loader) ============
-         1) full-height cream background  2) brand panel slides up over it
-         3) text rises letter by letter (masked)  4) letters slide out, loader slides up -->
     <div id="loader" role="status" aria-live="polite" aria-label="Loading Jyoti Studio"
          class="fixed inset-0 z-[200] overflow-hidden bg-[#f3e9d8] bg-repeat [background-image:url('./assets/bg-pattern.webp')] [background-size:1000px_auto]">
       <div data-l-brand class="absolute inset-0 flex flex-col items-center justify-center bg-[#3a0d12] px-6 text-center will-change-transform">
@@ -206,7 +191,6 @@
     <noscript><style>#loader{display:none!important}</style></noscript>
 
     <div class="w-full bg-transparent">
-      <!-- ============ 0. TOP BOOKING BANNER ============ -->
       <div
         id="top-banner"
         role="region"
@@ -229,57 +213,54 @@
         </p>
       </div>
 
-      <!-- ============ 1. HERO ============ -->
       <section id="home" class="hero2" aria-label="Jyoti Studio hero">
-        <!-- strip gallery background (Tailwind only). Mobile shows 3 strips, md and up shows 4. -->
-        <div class="absolute inset-0 flex gap-1 overflow-hidden bg-[#0a0a0a]" aria-hidden="true">
-          <div class="relative flex-1 min-w-0 overflow-hidden">
-            <div data-strip="up" data-dur="34" class="flex flex-col gap-1 pb-1 will-change-transform">
-              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+        <div class="absolute inset-0 flex flex-col md:flex-row gap-1 overflow-hidden bg-[#0a0a0a]" aria-hidden="true">
+          <div class="relative flex-1 min-w-0 min-h-0 overflow-hidden">
+            <div data-strip="up" data-dur="34" class="flex flex-row md:flex-col gap-1 h-full w-max md:w-full md:h-auto pr-1 md:pr-0 md:pb-1 will-change-transform">
+              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="eager" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="eager" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
             </div>
           </div>
-          <div class="relative flex-1 min-w-0 overflow-hidden">
-            <div data-strip="down" data-dur="28" class="flex flex-col gap-1 pb-1 will-change-transform">
-              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-7.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-8.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-7.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-8.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+          <div class="relative flex-1 min-w-0 min-h-0 overflow-hidden">
+            <div data-strip="down" data-dur="28" class="flex flex-row md:flex-col gap-1 h-full w-max md:w-full md:h-auto pr-1 md:pr-0 md:pb-1 will-change-transform">
+              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="eager" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="eager" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-7.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-8.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-7.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-8.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
             </div>
           </div>
-          <div class="relative flex-1 min-w-0 overflow-hidden">
-            <div data-strip="up" data-dur="40" class="flex flex-col gap-1 pb-1 will-change-transform">
-              <img src="./assets/img/hero-strip/strip-9.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-10.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-9.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-10.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+          <div class="relative flex-1 min-w-0 min-h-0 overflow-hidden">
+            <div data-strip="up" data-dur="40" class="flex flex-row md:flex-col gap-1 h-full w-max md:w-full md:h-auto pr-1 md:pr-0 md:pb-1 will-change-transform">
+              <img src="./assets/img/hero-strip/strip-9.jpg" alt="" loading="eager" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-10.jpg" alt="" loading="eager" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-9.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-10.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
             </div>
           </div>
-          <!-- 4th strip: hidden on mobile so only three vertical strips show -->
-          <div class="relative hidden md:block flex-1 min-w-0 overflow-hidden">
-            <div data-strip="down" data-dur="26" class="flex flex-col gap-1 pb-1 will-change-transform">
-              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
-              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+          <div class="relative hidden md:block flex-1 min-w-0 min-h-0 overflow-hidden">
+            <div data-strip="down" data-dur="26" class="flex flex-row md:flex-col gap-1 h-full w-max md:w-full md:h-auto pr-1 md:pr-0 md:pb-1 will-change-transform">
+              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="eager" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="eager" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="lazy" decoding="async" class="block flex-none h-full w-[60vw] md:w-full md:h-[46vh] md:min-h-[320px] object-cover object-[center_22%]" />
             </div>
           </div>
         </div>
@@ -312,14 +293,12 @@
         <h1 class="hero2__title font-primary">Jyoti Studio</h1>
       </section>
 
-      <!-- ============ 2. ABOUT THE STUDIO ============ -->
       <section
         id="studio"
         aria-labelledby="studio-heading"
         class="py-28 px-4 sm:px-6 lg:px-8 overflow-hidden"
       >
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
-          <!-- Text -->
           <div class="w-full lg:max-w-[460px] lg:shrink-0 space-y-6 text-center lg:text-left">
             <span class="font-secondary text-base font-medium text-[#8d0714] tracking-wide">About The Studio</span>
 
@@ -343,7 +322,6 @@
             </a>
           </div>
 
-          <!-- Photos -->
           <div class="w-full lg:flex-1 grid grid-cols-2 gap-4 sm:gap-6 items-start">
             <div class="flex flex-col gap-4 sm:gap-6">
               <div class="w-3/4 ml-auto aspect-[4/3] overflow-hidden rounded-xl">
@@ -363,14 +341,12 @@
         </div>
       </section>
 
-      <!-- ============ 3. SERVICES ============ -->
       <section
         id="services"
         aria-labelledby="services-heading"
         class="py-28 px-4 sm:px-6 lg:px-8 bg-[#3a0d12]"
       >
         <div class="max-w-7xl mx-auto">
-          <!-- Header -->
           <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-12 sm:mb-16">
             <div>
               <span class="font-secondary text-base font-medium text-[#e8c9a0] tracking-wide">Our Services</span>
@@ -388,7 +364,6 @@
           </div>
 
           <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0">
-            <!-- Wedding Photography -->
             <li class="group flex flex-col">
               <div class="flex flex-col gap-4">
                 <div class="overflow-hidden rounded-xl bg-gray-100 relative">
@@ -420,7 +395,6 @@
               </div>
             </li>
 
-            <!-- Pre-Wedding Shoots -->
             <li class="group flex flex-col">
               <div class="flex flex-col gap-4">
                 <div class="overflow-hidden rounded-xl bg-gray-100 relative">
@@ -452,7 +426,6 @@
               </div>
             </li>
 
-            <!-- Cinematic Wedding Films -->
             <li class="group flex flex-col">
               <div class="flex flex-col gap-4">
                 <div class="overflow-hidden rounded-xl bg-gray-100 relative">
@@ -492,7 +465,6 @@
               </div>
             </li>
 
-            <!-- Maternity Photography -->
             <li class="group flex flex-col">
               <div class="flex flex-col gap-4">
                 <div class="overflow-hidden rounded-xl bg-gray-100 relative">
@@ -524,7 +496,6 @@
               </div>
             </li>
 
-            <!-- Baby & Kids Photography -->
             <li class="group flex flex-col">
               <div class="flex flex-col gap-4">
                 <div class="overflow-hidden rounded-xl bg-gray-100 relative">
@@ -556,7 +527,6 @@
               </div>
             </li>
 
-            <!-- Event Photography -->
             <li class="group flex flex-col">
               <div class="flex flex-col gap-4">
                 <div class="overflow-hidden rounded-xl bg-gray-100 relative">
@@ -591,14 +561,12 @@
         </div>
       </section>
 
-      <!-- ============ 4. WHY CHOOSE US ============ -->
       <section
         id="why-us"
         aria-labelledby="why-heading"
         class="py-28 px-4 sm:px-6 lg:px-8"
       >
         <div class="max-w-7xl mx-auto">
-          <!-- Header -->
           <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
             <img src="https://framerusercontent.com/images/MJu5JNt0cYqpgD4mSOL48DCNmqA.png?scale-down-to=1024&width=3168&height=1344" alt="" aria-hidden="true" class="mx-auto w-56 sm:w-72 h-auto" loading="lazy" decoding="async" />
             <h2
@@ -612,14 +580,9 @@
             </p>
           </div>
 
-          <!--
-            Mobile order: first three USPs, then the image, then the last three USPs.
-            Desktop order: left USPs | image | right USPs.
-          -->
           <div
             class="grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,420px)_1fr] gap-10 lg:gap-10 xl:gap-16 items-center"
           >
-            <!-- Left features (mobile: top) -->
             <ul class="order-1 flex flex-col gap-10 list-none p-0 m-0">
               <li class="flex items-start gap-5">
                 <span class="flex-none size-14 rounded-2xl bg-[#f2ebe0] text-[#5a3326] flex items-center justify-center" aria-hidden="true">
@@ -664,7 +627,6 @@
               </li>
             </ul>
 
-            <!-- Image (mobile: middle) -->
             <div class="order-2 relative flex justify-center">
               <div
                 class="relative w-full max-w-[320px] sm:max-w-sm lg:max-w-none h-[420px] sm:h-[500px] rounded-[200px] overflow-hidden ring-1 ring-[#5a3326]/15 shadow-xl"
@@ -679,7 +641,6 @@
               </div>
             </div>
 
-            <!-- Right features (mobile: bottom) -->
             <ul class="order-3 flex flex-col gap-10 list-none p-0 m-0">
               <li class="flex items-start gap-5">
                 <span class="flex-none size-14 rounded-2xl bg-[#f2ebe0] text-[#5a3326] flex items-center justify-center" aria-hidden="true">
@@ -727,7 +688,6 @@
         </div>
       </section>
 
-      <!-- ============ 5. SHOWREEL ============ -->
       <section id="showreel" aria-label="Studio showreel" class="w-full overflow-hidden relative h-[80vh]">
         <video
           class="w-full h-full object-cover"
@@ -750,7 +710,6 @@
         </div>
       </section>
 
-      <!-- ============ 6. REAL LOVE STORIES ============ -->
       <section
         id="love-stories"
         aria-labelledby="love-stories-heading"
@@ -848,7 +807,6 @@
         </div>
       </section>
 
-      <!-- ============ 7. ABOUT THE PHOTOGRAPHER ============ -->
       <section
         id="about"
         aria-labelledby="about-heading"
@@ -894,7 +852,6 @@
         </div>
       </section>
 
-      <!-- ============ 8. TESTIMONIALS ============ -->
       <style>
         #testimonials .testi-track {
           display: flex;
@@ -949,7 +906,6 @@
           transition: background 0.3s;
         }
         #testimonials .testi-dots button.is-active { background: #8d0714; }
-        /* font-family comes from the font-primary class on the element */
         #testimonials .testi-big-text {
           font-size: 10vw;
           font-weight: 500;
@@ -1066,7 +1022,7 @@
           var dots = document.querySelectorAll('#testiDots button');
           if (!track || !dots.length) return;
           var cards = track.querySelectorAll('.testi-card');
-          var START = 1; // slide 2 active on load
+          var START = 1;
           function step() {
             return cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : 0;
           }
@@ -1095,7 +1051,6 @@
         })();
       </script>
 
-      <!-- ============ 9. CALL TO ACTION (before footer) ============ -->
       <section
         id="inquiry"
         aria-labelledby="cta-heading"
@@ -1135,10 +1090,8 @@
         </div>
       </section>
 
-      <!-- ============ 10. CONTACT / FOOTER ============ -->
       <section id="contact" aria-label="Contact details" class="w-full bg-[#f3e9d8] border-y border-[#5a3326] text-[#5a3326]">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          <!-- Address -->
           <div class="flex flex-col items-center text-center px-5 pt-16 pb-12 border-b md:border-r lg:border-b-0 border-[#5a3326]">
             <svg class="h-6 w-6 [&_path]:fill-[#5a3326]" preserveAspectRatio="xMidYMid meet" viewBox="53.5 36.5 93 127" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
               <g>
@@ -1152,7 +1105,6 @@
             </address>
           </div>
 
-          <!-- Phone -->
           <div class="flex flex-col items-center text-center px-5 pt-16 pb-12 border-b lg:border-r lg:border-b-0 border-[#5a3326]">
             <svg class="h-6 w-6 [&_path]:fill-[#5a3326]" preserveAspectRatio="xMidYMid meet" viewBox="35 56 130 88" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
               <g>
@@ -1165,7 +1117,6 @@
             </a>
           </div>
 
-          <!-- Email -->
           <div class="flex flex-col items-center text-center px-5 pt-16 pb-12 border-b md:border-r lg:border-b-0 border-[#5a3326]">
             <svg class="h-6 w-6 [&_path]:fill-[#5a3326]" preserveAspectRatio="xMidYMid meet" viewBox="42 39.499 116 121" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
               <g>
@@ -1178,7 +1129,6 @@
             </a>
           </div>
 
-          <!-- Social -->
           <div class="flex flex-col items-center text-center px-5 pt-16 pb-12">
             <svg class="h-6 w-6 [&_path]:fill-[#5a3326]" preserveAspectRatio="xMidYMid meet" viewBox="42 39.499 116 121" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
               <g>
@@ -1187,7 +1137,6 @@
             </svg>
             <h3 class="font-primary text-xl leading-tight mt-3">Follow Us</h3>
             <div class="flex items-center gap-3 mt-3">
-              <!-- TODO: replace the three links below with the studio's real profile URLs -->
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Jyoti Studio And Photography on Facebook"
                  class="size-10 rounded-full bg-[#1877f2] text-white flex items-center justify-center hover:scale-110 transition-transform duration-300">
                 <i class="ri-facebook-fill text-lg" aria-hidden="true"></i>
@@ -1204,7 +1153,6 @@
           </div>
         </div>
 
-        <!-- Copyright -->
         <div class="border-t border-[#5a3326] px-6 py-4 flex flex-col items-center gap-1 md:flex-row md:justify-between font-secondary text-sm text-[#5a3326]">
           <p>&copy; 2026 Jyoti Studio And Photography. All rights reserved.</p>
           <p>Designed &amp; Developed by <span class="font-semibold">Renoble</span></p>
@@ -1212,8 +1160,6 @@
       </section>
     </div>
 
-
-    <!-- ============ OFFER POPUP ============ -->
     <div id="offerModal" class="offer font-secondary" role="dialog" aria-modal="true" aria-labelledby="offerTitle" hidden>
       <div class="offer__box">
         <div class="offer__photo">
@@ -1282,9 +1228,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
 
-    <!-- ============ LOADER SCRIPT (the only loader) ============
-         1) cream bg shows  2) brand panel slides up  3) text rises letter by letter
-         4) letters slide out, then the whole loader slides up and is removed -->
     <script>
       (function () {
         var el = document.getElementById('loader');
@@ -1305,7 +1248,6 @@
           window.dispatchEvent(new Event('loaderdone'));
         }
 
-        // Fallback: no GSAP or reduced motion
         if (!window.gsap || reduce) {
           var fade = function () { el.style.transition = 'opacity .4s'; el.style.opacity = '0'; setTimeout(remove, 450); };
           if (loaded) fade(); else window.addEventListener('load', fade);
@@ -1313,7 +1255,6 @@
           return;
         }
 
-        // Split text into letters, each inside an overflow-hidden mask
         function split(node) {
           var txt = node.textContent;
           node.textContent = '';
@@ -1333,11 +1274,9 @@
         var wordC = split(el.querySelector('[data-l-word]'));
         var tagC  = split(el.querySelector('[data-l-tag]'));
 
-        // Start state: brand panel below the screen, letters below their masks
         gsap.set(brand, { yPercent: 100 });
         gsap.set(wordC.concat(tagC), { yPercent: 180 });
 
-        // Step 4: letters slide out, then brand + cream slide up together
         function outro() {
           if (outroStarted || !introDone || !loaded) return;
           outroStarted = true;
@@ -1346,16 +1285,14 @@
             .to(el, { yPercent: -100, duration: 1.1, ease: 'power4.inOut' }, '-=0.2');
         }
 
-        // Steps 1-3: cream shows, brand panel slides up, text rises
         function startIntro() {
           gsap.timeline({ onComplete: function () { introDone = true; outro(); } })
             .to(brand, { yPercent: 0, duration: 1.2, ease: 'power4.inOut' }, 0.2)
             .to(wordC, { yPercent: 0, duration: 1, ease: 'power4.out', stagger: 0.06 }, '-=0.45')
             .to(tagC,  { yPercent: 0, duration: 0.8, ease: 'power4.out', stagger: 0.03 }, '-=0.7')
-            .to({}, { duration: 0.6 }); // hold
+            .to({}, { duration: 0.6 });
         }
 
-        // Wait for Soligant so the text never flashes in a fallback font
         var fontsReady = (document.fonts && document.fonts.load)
           ? Promise.race([
               document.fonts.load('64px "Soligant"'),
@@ -1366,7 +1303,6 @@
 
         if (!loaded) window.addEventListener('load', function () { loaded = true; outro(); });
 
-        // Safety net: never leave the page covered
         setTimeout(function () { loaded = true; introDone = true; outro(); }, 9000);
       })();
     </script>
@@ -1379,13 +1315,32 @@
     <script>
       (function () {
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (window.gsap && !reduce) {
-          document.querySelectorAll('[data-strip]').forEach(function (t) {
+        if (!window.gsap || reduce) return;
+
+        var strips = document.querySelectorAll('[data-strip]');
+        var mm = gsap.matchMedia();
+
+        mm.add('(max-width: 767px)', function () {
+          strips.forEach(function (t) {
+            var left = t.getAttribute('data-strip') === 'up';
+            var d = parseFloat(t.getAttribute('data-dur')) || 30;
+            gsap.fromTo(t,
+              { xPercent: left ? 0 : -50 },
+              { xPercent: left ? -50 : 0, duration: d, ease: 'none', repeat: -1 }
+            );
+          });
+        });
+
+        mm.add('(min-width: 768px)', function () {
+          strips.forEach(function (t) {
             var up = t.getAttribute('data-strip') === 'up';
             var d = parseFloat(t.getAttribute('data-dur')) || 30;
-            gsap.fromTo(t, { yPercent: up ? 0 : -50 }, { yPercent: up ? -50 : 0, duration: d, ease: 'none', repeat: -1 });
+            gsap.fromTo(t,
+              { yPercent: up ? 0 : -50 },
+              { yPercent: up ? -50 : 0, duration: d, ease: 'none', repeat: -1 }
+            );
           });
-        }
+        });
       })();
     </script>
 
@@ -1395,7 +1350,6 @@
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         function init() {
-          // Smooth scrolling (Lenis) if nothing else started it
           if (!window.lenis && !root.classList.contains('lenis') && window.Lenis && !reduce) {
             var instance = new Lenis({ duration: 1.1, smoothWheel: true });
             window.lenis = instance;
@@ -1412,7 +1366,6 @@
           window.addEventListener('wheel', stopTween, { passive: true });
           window.addEventListener('touchstart', stopTween, { passive: true });
 
-          // GSAP-driven scroll to a Y position
           function goTo(y) {
             var max = root.scrollHeight - window.innerHeight;
             y = Math.max(0, Math.min(y, max));
@@ -1432,7 +1385,6 @@
             });
           }
 
-          // Every in-page link (navbar, buttons, brand) scrolls to its section
           document.addEventListener('click', function (e) {
             var link = e.target.closest ? e.target.closest('a[href^="#"]') : null;
             if (!link) return;
