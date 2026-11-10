@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jyoti Studio — Strip Hero (saved variant)</title>
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body { margin: 0; font-family: "Inter", sans-serif; }
+
+      .strip-hero {
+        position: relative;
+        height: 100svh;
+        min-height: 560px;
+        overflow: hidden;
+        background: #0a0a0a;
+      }
+
+      .strip-hero__grid {
+        display: flex;
+        gap: 4px;
+        height: 100%;
+        width: 100%;
+      }
+
+      .strip-col {
+        position: relative;
+        flex: 1 1 0;
+        overflow: hidden;
+        min-width: 0;
+      }
+
+      .strip-col__track {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        will-change: transform;
+      }
+
+      .strip-col--up .strip-col__track {
+        animation: stripScrollUp linear infinite;
+      }
+
+      .strip-col--down .strip-col__track {
+        animation: stripScrollDown linear infinite;
+      }
+
+      .strip-col__track img {
+        display: block;
+        width: 100%;
+        height: 46vh;
+        min-height: 320px;
+        object-fit: cover;
+        object-position: center 22%;
+      }
+
+      @keyframes stripScrollUp {
+        from { transform: translateY(0); }
+        to { transform: translateY(-50%); }
+      }
+
+      @keyframes stripScrollDown {
+        from { transform: translateY(-50%); }
+        to { transform: translateY(0); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .strip-col--up .strip-col__track,
+        .strip-col--down .strip-col__track {
+          animation: none;
+        }
+      }
+
+      .strip-hero__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            ellipse at center,
+            rgba(0, 0, 0, 0.45) 0%,
+            rgba(0, 0, 0, 0.2) 45%,
+            rgba(0, 0, 0, 0.15) 100%
+          ),
+          linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.55) 0%,
+            rgba(0, 0, 0, 0.1) 20%,
+            rgba(0, 0, 0, 0.1) 70%,
+            rgba(0, 0, 0, 0.55) 100%
+          );
+      }
+
+      .strip-hero__logo,
+      .strip-hero__menu {
+        pointer-events: auto;
+      }
+
+      .strip-hero__logo {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        z-index: 20;
+        width: 44px;
+        height: 44px;
+        border-radius: 9999px;
+        background: #fff;
+        color: #0a0a0a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Instrument Serif", serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+
+      .strip-hero__menu {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 20;
+        background: #fff;
+        color: #0a0a0a;
+        border: none;
+        border-radius: 9999px;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        cursor: pointer;
+      }
+
+      .strip-hero__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 20;
+        margin: 0;
+        color: #fff;
+        font-weight: 800;
+        font-size: clamp(2.75rem, 9vw, 6.5rem);
+        letter-spacing: -0.02em;
+        text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+
+  <body class="antialiased">
+      <!-- STRIP HERO -->
+      <section class="strip-hero" aria-label="Jyoti Studio hero">
+        <div class="strip-hero__grid" id="stripHeroGrid"></div>
+        <div class="strip-hero__overlay"></div>
+        <div class="strip-hero__logo">J</div>
+        <button type="button" class="strip-hero__menu">MENU</button>
+        <h1 class="strip-hero__title">Jyoti Studio</h1>
+      </section>
+
+      <script>
+        (function () {
+          var images = [
+            "strip-1.jpg","strip-2.jpg","strip-3.jpg","strip-4.jpg",
+            "strip-5.jpg","strip-6.jpg","strip-7.jpg","strip-8.jpg",
+            "strip-9.jpg","strip-10.jpg"
+          ];
+          var base = "./assets/img/hero-strip/";
+          var columns = 4;
+          var perColumn = 4;
+          var durations = [34, 28, 40, 26];
+          var grid = document.getElementById("stripHeroGrid");
+
+          for (var c = 0; c < columns; c++) {
+            var col = document.createElement("div");
+            col.className = "strip-col " + (c % 2 === 0 ? "strip-col--up" : "strip-col--down");
+
+            var track = document.createElement("div");
+            track.className = "strip-col__track";
+            track.style.animationDuration = durations[c % durations.length] + "s";
+
+            var pics = [];
+            for (var i = 0; i < perColumn; i++) {
+              pics.push(images[(c * perColumn + i) % images.length]);
+            }
+            // duplicate the set so a 50% translate loops seamlessly
+            var doubled = pics.concat(pics);
+            doubled.forEach(function (file) {
+              var img = document.createElement("img");
+              img.src = base + file;
+              img.alt = "";
+              img.loading = "lazy";
+              track.appendChild(img);
+            });
+
+            col.appendChild(track);
+            grid.appendChild(col);
+          }
+        })();
+      </script>
+  </body>
+</html>

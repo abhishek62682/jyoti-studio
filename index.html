@@ -1,0 +1,1450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3a0d12" />
+
+    <title>Jyoti Studio And Photography | Wedding, Pre-Wedding &amp; Family Photographers in Dombivli</title>
+
+    <meta
+      name="description"
+      content="Jyoti Studio And Photography captures weddings, pre-wedding shoots, maternity, baby and kids portraits, cinematic films and events in Dombivli, Thane. Book your session today."
+    />
+
+    <!-- Social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jyoti Studio And Photography" />
+    <meta property="og:title" content="Jyoti Studio And Photography | Wedding &amp; Family Photographers" />
+    <meta
+      property="og:description"
+      content="Calm, candid and cinematic photography for weddings, pre-wedding shoots, maternity, kids and events."
+    />
+    <meta property="og:image" content="./assets/img/image/image-94.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Only the two site fonts: Herr Von Muellerhoff (primary) + Barlow (secondary) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Barlow:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.23/dist/lenis.css" />
+
+    <!-- Tailwind CSS (Play CDN, pinned). For best performance, replace this with a compiled
+         Tailwind build before launch. The config below restores the font-primary / font-secondary utilities. -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="./assets/js/tailwind-config.js"></script>
+
+    <!-- Hero carousel, font-face and Swiper pagination overrides -->
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+
+    <!-- Fonts: font-primary (set in tailwind-config) + font-secondary = Barlow.
+         Anything without an explicit font class falls back to font-secondary. -->
+    <style>
+      body,
+      button,
+      input,
+      textarea,
+      select {
+        font-family: "Barlow", sans-serif;
+      }
+      .font-secondary {
+        font-family: "Barlow", sans-serif !important;
+      }
+      /* Navbar button: white pill, banner-colour arrow circle */
+      .hero2__cta {
+        background: #ffffff !important;
+        border-color: #ffffff !important;
+        color: #3a0d12 !important;
+      }
+      .hero2__cta:hover {
+        background: #f3e9d8 !important;
+        border-color: #f3e9d8 !important;
+      }
+      .hero2__cta-icon {
+        background: #3a0d12 !important;
+        color: #ffffff !important;
+      }
+      .hero2__cta-icon i {
+        color: #ffffff !important;
+      }
+      /* Shared button system: pill + arrow circle (matches navbar CTA) */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.9rem;
+        padding: 0.5rem 0.5rem 0.5rem 1.6rem;
+        border: 1px solid transparent;
+        border-radius: 9999px;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        line-height: 1.2;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      }
+      .btn__icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 9999px;
+        font-size: 1.05rem;
+        transition: background-color 0.3s, color 0.3s, transform 0.3s;
+      }
+      .btn:hover .btn__icon { transform: rotate(45deg); }
+      .btn-outline { color: #3a0d12; border-color: #3a0d12; }
+      .btn-outline .btn__icon { background: #3a0d12; color: #ffffff; }
+      .btn-outline:hover { background: #3a0d12; color: #ffffff; }
+      .btn-outline:hover .btn__icon { background: #ffffff; color: #3a0d12; }
+      .btn-light { background: #ffffff; color: #3a0d12; border-color: #ffffff; }
+      .btn-light .btn__icon { background: #3a0d12; color: #ffffff; }
+      .btn-light:hover { background: #e8c9a0; border-color: #e8c9a0; }
+      .btn-outline-light { color: #ffffff; border-color: rgba(255, 255, 255, 0.6); }
+      .btn-outline-light .btn__icon { background: #ffffff; color: #3a0d12; }
+      .btn-outline-light:hover { background: #ffffff; color: #3a0d12; border-color: #ffffff; }
+      .btn-outline-light:hover .btn__icon { background: #3a0d12; color: #ffffff; }
+
+      /* Offer popup */
+      .offer { position: fixed; inset: 0; z-index: 100; display: none; align-items: center; justify-content: center; padding: 16px; background: rgba(58, 13, 18, 0.65); overflow-y: auto; }
+      .offer.is-open { display: flex; animation: offerFade 0.35s ease both; }
+      .offer.is-open .offer__box { animation: offerRise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+      @keyframes offerFade { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes offerRise { from { opacity: 0; transform: translateY(24px) scale(0.97); } to { opacity: 1; transform: none; } }
+      .offer__box { position: relative; width: 100%; max-width: 400px; margin: auto; padding: 22px 22px 26px; border-radius: 28px; background: #f3e9d8; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35); }
+      .offer__photo { position: relative; overflow: hidden; aspect-ratio: 4 / 4.4; border-radius: 22px; border: 1px solid rgba(90, 51, 38, 0.2); }
+      .offer__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+      .offer__close { position: absolute; top: 0; right: 0; z-index: 2; display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border: 0; border-radius: 0 28px 0 28px; background: #f3e9d8; color: #5a3326; font-size: 22px; cursor: pointer; transition: color 0.3s; }
+      .offer__close:hover { color: #8d0714; }
+      .offer__card { position: relative; margin: -84px 14px 0; padding: 26px 20px 24px; border: 1px solid rgba(90, 51, 38, 0.18); border-radius: 26px; background: #ffffff; text-align: center; }
+      .offer__title { font-size: 2.4rem; line-height: 1; letter-spacing: 0.04em; text-transform: uppercase; color: #5a3326; }
+      .offer__sub { margin-top: 6px; font-size: 1.05rem; letter-spacing: 0.06em; text-transform: uppercase; color: #5a3326; }
+      .offer__text { margin: 14px auto 0; max-width: 260px; font-size: 1rem; line-height: 1.55; color: #4b4b4b; }
+      .offer__note { margin-top: 16px; font-size: 0.875rem; color: #8a6a55; }
+      @media (prefers-reduced-motion: reduce) { .offer.is-open, .offer.is-open .offer__box { animation: none; } }
+      /* Navbar must always be clickable above the hero overlay */
+      .hero2__overlay { pointer-events: none; }
+      .hero2__nav { z-index: 60; }
+      .hero2__nav a { pointer-events: auto; cursor: pointer; }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid #8d0714;
+        outline-offset: 3px;
+      }
+    </style>
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Photographer",
+        "name": "Jyoti Studio And Photography",
+        "description": "Wedding, pre-wedding, maternity, baby and kids photography, cinematic films and event coverage.",
+        "telephone": "+918779161415",
+        "email": "info@jyotistudio.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R Galleria, Runwal Garden, Dombivli East",
+          "addressLocality": "Thane",
+          "addressRegion": "Maharashtra",
+          "postalCode": "421204",
+          "addressCountry": "IN"
+        }
+      }
+    </script>
+  </head>
+
+  <body
+    class="font-secondary antialiased flex flex-col min-h-screen overflow-x-clip max-w-[100vw] bg-[#f3e9d8] bg-repeat [background-image:url('./assets/bg-pattern.webp')] [background-size:1000px_auto]"
+  >
+    <!-- ============ PAGE LOADER ============
+         1) big white panel shrinks  2) brand panel slides up, text rises letter by letter (masked)
+         3) white rises again from the bottom, text turns black  4) text slides up out, loader wipes away -->
+    <div id="loader" role="status" aria-live="polite" aria-label="Loading Jyoti Studio" class="fixed inset-0 z-[200] overflow-hidden">
+
+      <!-- brand panel + light text -->
+      <div data-l-brand class="absolute inset-0 flex flex-col items-center justify-center bg-[#3a0d12] px-6 text-center">
+        <div class="flex flex-col items-end">
+          <p data-l-tag class="mb-1 whitespace-nowrap font-primary lowercase text-xl sm:text-2xl lg:text-4xl leading-none text-[#e8c9a0]" aria-hidden="true">Photography</p>
+          <p data-l-word class="whitespace-nowrap font-primary lowercase text-6xl sm:text-7xl lg:text-9xl leading-none text-[#f3e9d8]" aria-hidden="true">Jyoti Studio</p>
+        </div>
+      </div>
+
+      <!-- big white panel (full height, shrinks away) -->
+      <div data-l-white1 class="absolute inset-x-0 top-0 h-full bg-[#f3e9d8] bg-repeat [background-image:url('./assets/bg-pattern.webp')] [background-size:1000px_auto]"></div>
+
+      <!-- white panel that rises from the bottom, carries the black copy of the text -->
+      <div data-l-white2 class="absolute inset-x-0 bottom-0 h-0 overflow-hidden bg-[#f3e9d8] bg-repeat [background-image:url('./assets/bg-pattern.webp')] [background-size:1000px_auto]">
+        <div data-l-inner class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center px-6 text-center">
+          <div class="flex flex-col items-end">
+            <p data-l-tag-dark class="mb-1 whitespace-nowrap font-primary lowercase text-xl sm:text-2xl lg:text-4xl leading-none text-[#5a3326]" aria-hidden="true">Photography</p>
+            <p data-l-word-dark class="whitespace-nowrap font-primary lowercase text-6xl sm:text-7xl lg:text-9xl leading-none text-[#5a3326]" aria-hidden="true">Jyoti Studio</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <noscript><style>#loader{display:none!important}</style></noscript>
+
+    <div class="w-full bg-transparent">
+      <!-- ============ 0. TOP BOOKING BANNER ============ -->
+      <div
+        id="top-banner"
+        role="region"
+        aria-label="Booking announcement"
+        class="w-full bg-[#3a0d12] text-[#f3e9d8] px-4 py-2.5"
+      >
+        <p
+          class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center font-secondary text-xs sm:text-sm tracking-wide"
+        >
+          <span>Now booking weddings &amp; celebrations for 2027</span>
+          <a
+            href="https://wa.me/918779161415?text=Hi%20Jyoti%20Studio%2C%20I%20would%20like%20to%20check%20if%20my%20date%20is%20available."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 font-semibold underline underline-offset-4 decoration-[#e8c9a0]/60 hover:text-[#e8c9a0] transition-colors duration-300"
+          >
+            Check your date
+            <i class="ri-arrow-right-up-line" aria-hidden="true"></i>
+          </a>
+        </p>
+      </div>
+
+      <!-- ============ 1. HERO ============ -->
+      <section id="home" class="hero2" aria-label="Jyoti Studio hero">
+        <!-- strip gallery background (Tailwind only) -->
+        <div class="absolute inset-0 flex gap-1 overflow-hidden bg-[#0a0a0a]" aria-hidden="true">
+          <div class="relative flex-1 min-w-0 overflow-hidden">
+            <div data-strip="up" data-dur="34" class="flex flex-col gap-1 pb-1 will-change-transform">
+              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+            </div>
+          </div>
+          <div class="relative flex-1 min-w-0 overflow-hidden">
+            <div data-strip="down" data-dur="28" class="flex flex-col gap-1 pb-1 will-change-transform">
+              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-7.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-8.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-7.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-8.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+            </div>
+          </div>
+          <div class="relative flex-1 min-w-0 overflow-hidden">
+            <div data-strip="up" data-dur="40" class="flex flex-col gap-1 pb-1 will-change-transform">
+              <img src="./assets/img/hero-strip/strip-9.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-10.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-9.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-10.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-1.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-2.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+            </div>
+          </div>
+          <div class="relative flex-1 min-w-0 overflow-hidden">
+            <div data-strip="down" data-dur="26" class="flex flex-col gap-1 pb-1 will-change-transform">
+              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="eager" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-3.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-4.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-5.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+              <img src="./assets/img/hero-strip/strip-6.jpg" alt="" loading="lazy" decoding="async" class="block w-full h-[46vh] min-h-[320px] object-cover object-[center_22%]" />
+            </div>
+          </div>
+        </div>
+        <div class="hero2__overlay"></div>
+        <nav class="hero2__nav font-secondary" aria-label="Main navigation">
+          <a href="#home" class="hero2__brand font-primary" aria-label="Jyoti Studio home">
+            Jyoti Studio
+          </a>
+          <div class="hero2__links font-secondary">
+            <a href="#home" class="font-secondary">Home</a>
+            <a href="#studio" class="font-secondary">About Us</a>
+            <a href="#services" class="font-secondary">Services</a>
+            <a href="#why-us" class="font-secondary">Why Us</a>
+            <a href="#testimonials" class="font-secondary">Testimonials</a>
+            <a href="#contact" class="font-secondary">Contact</a>
+          </div>
+          <a
+            class="hero2__cta font-secondary"
+            href="https://wa.me/918779161415?text=Hi%20Jyoti%20Studio%2C%20I%20would%20like%20to%20book%20a%20session."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Book Now</span>
+            <span class="hero2__cta-icon" aria-hidden="true"
+              ><i class="ri-arrow-right-up-line"></i
+              ><i class="ri-arrow-right-up-line"></i
+            ></span>
+          </a>
+        </nav>
+        <h1 class="hero2__title font-primary">Jyoti Studio</h1>
+      </section>
+
+      <!-- ============ 2. ABOUT THE STUDIO ============ -->
+      <section
+        id="studio"
+        aria-labelledby="studio-heading"
+        class="py-28 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      >
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
+          <!-- Text -->
+          <div class="w-full lg:max-w-[460px] lg:shrink-0 space-y-6 text-center lg:text-left">
+            <span class="font-secondary text-base font-medium text-[#8d0714] tracking-wide">About The Studio</span>
+
+            <h2
+              id="studio-heading"
+              class="font-primary text-4xl sm:text-5xl lg:text-6xl font-medium text-[#5a3326] leading-[1.05]"
+            >
+              Moments, Kept Beautifully
+            </h2>
+
+            <p class="font-secondary text-base leading-relaxed text-gray-600">
+              We photograph weddings, pre-wedding stories, maternity sessions, baby and kids portraits, cinematic films and events. Every session is calm, candid and personal, so the pictures you keep look the way the moment felt.
+            </p>
+
+            <a
+              href="#services"
+              class="btn btn-outline font-secondary"
+            >
+              <span>Explore Our Work</span>
+              <span class="btn__icon" aria-hidden="true"><i class="ri-arrow-right-up-line"></i></span>
+            </a>
+          </div>
+
+          <!-- Photos -->
+          <div class="w-full lg:flex-1 grid grid-cols-2 gap-4 sm:gap-6 items-start">
+            <div class="flex flex-col gap-4 sm:gap-6">
+              <div class="w-3/4 ml-auto aspect-[4/3] overflow-hidden rounded-xl">
+                <img class="w-full h-full object-cover" src="https://images-pw.pixieset.com/site/BAxvyK/QyZ5J3/BirthdayPhotoshootbyImpresioStudioJune20261050-c7cb1452-1000.jpg" alt="Bride and groom during a wedding ceremony, photographed by Jyoti Studio And Photography" loading="lazy" decoding="async" />
+              </div>
+              <div class="w-full aspect-[5/4] overflow-hidden rounded-xl">
+                <img class="w-full h-full object-cover" src="./assets/img/image/image-75.webp" alt="Couple posing during a pre-wedding shoot" loading="lazy" decoding="async" />
+              </div>
+            </div>
+
+            <div class="pt-14 sm:pt-24">
+              <div class="w-full aspect-[3/4] overflow-hidden rounded-xl">
+                <img class="w-full h-full object-cover" src="https://static.wixstatic.com/media/c33238_10e443b7b1a044ce8c54e67728327b01~mv2.jpg/v1/fill/w_718,h_958,fp_0.56_0.32,q_90,enc_avif,quality_auto/c33238_10e443b7b1a044ce8c54e67728327b01~mv2.jpg" alt="Expecting mother during a maternity portrait session" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 3. SERVICES ============ -->
+      <section
+        id="services"
+        aria-labelledby="services-heading"
+        class="py-28 px-4 sm:px-6 lg:px-8 bg-[#3a0d12]"
+      >
+        <div class="max-w-7xl mx-auto">
+          <!-- Header -->
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-12 sm:mb-16">
+            <div>
+              <span class="font-secondary text-base font-medium text-[#e8c9a0] tracking-wide">Our Services</span>
+
+              <h2
+                id="services-heading"
+                class="font-primary reveal-text text-3xl sm:text-4xl md:text-5xl font-medium text-white leading-tight tracking-normal mt-3"
+              >
+                What We Capture
+              </h2>
+            </div>
+            <p class="text-white/85 text-base font-secondary leading-relaxed max-w-xl">
+              Browse our collections, from timeless weddings and romantic pre-wedding stories to maternity, family and event moments.
+            </p>
+          </div>
+
+          <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0">
+            <!-- Wedding Photography -->
+            <li class="group flex flex-col">
+              <div class="flex flex-col gap-4">
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full aspect-[4/3] sm:aspect-[5/4]">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" src="https://static.wixstatic.com/media/c33238_d99212921c8948c79d1709d533b8ac34~mv2.jpg/v1/fill/w_716,h_958,fp_0.45_0.26,q_90,enc_avif,quality_auto/c33238_d99212921c8948c79d1709d533b8ac34~mv2.jpg" alt="Wedding photography by Jyoti Studio And Photography" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://static.wixstatic.com/media/c33238_0d2b5497069a4d7e9cd2193f1f2c8e2f~mv2.jpg/v1/fill/w_716,h_958,fp_0.52_0.34,q_90,enc_avif,quality_auto/c33238_0d2b5497069a4d7e9cd2193f1f2c8e2f~mv2.jpg" alt="Wedding photography, image 2" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://static.wixstatic.com/media/c33238_083becf277f84f0f8046e35eaf620fc3~mv2.jpg/v1/fill/w_716,h_958,fp_0.66_0.31,q_90,enc_avif,quality_auto/c33238_083becf277f84f0f8046e35eaf620fc3~mv2.jpg" alt="Wedding photography, image 3" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://static.wixstatic.com/media/c33238_a7a774eb356b49318f5bd95432bb86fc~mv2.jpg/v1/fill/w_716,h_958,fp_0.43_0.19,q_90,enc_avif,quality_auto/c33238_a7a774eb356b49318f5bd95432bb86fc~mv2.jpg" alt="Wedding photography, image 4" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="block text-base font-secondary font-semibold text-white">Wedding Photography</span>
+                </div>
+              </div>
+            </li>
+
+            <!-- Pre-Wedding Shoots -->
+            <li class="group flex flex-col">
+              <div class="flex flex-col gap-4">
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full aspect-[4/3] sm:aspect-[5/4]">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" src="https://static.wixstatic.com/media/c33238_a181428679ad43fda7c8d17d99b14ea4~mv2.jpg/v1/fill/w_718,h_958,fp_0.47_0.56,q_90,enc_avif,quality_auto/c33238_a181428679ad43fda7c8d17d99b14ea4~mv2.jpg" alt="Pre-wedding shoot by Jyoti Studio And Photography" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://static.wixstatic.com/media/c33238_b3794126aeda4cc391a3b705fe12dc89~mv2.jpg/v1/fill/w_716,h_958,fp_0.21_0.51,q_90,enc_avif,quality_auto/c33238_b3794126aeda4cc391a3b705fe12dc89~mv2.jpg" alt="Pre-wedding shoot, image 2" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://static.wixstatic.com/media/c33238_0190f19a6b6143d8b9128d56225c2ae1~mv2.jpg/v1/fill/w_718,h_958,fp_0.49_0.61,q_90,enc_avif,quality_auto/c33238_0190f19a6b6143d8b9128d56225c2ae1~mv2.jpg" alt="Pre-wedding shoot, image 3" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://static.wixstatic.com/media/c33238_483ea9bffda04c54b375de3745d13927~mv2.jpg/v1/fill/w_718,h_638,fp_0.47_0.32,q_90,enc_avif,quality_auto/c33238_483ea9bffda04c54b375de3745d13927~mv2.jpg" alt="Pre-wedding shoot, image 4" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="block text-base font-secondary font-semibold text-white">Pre-Wedding Shoots</span>
+                </div>
+              </div>
+            </li>
+
+            <!-- Cinematic Wedding Films -->
+            <li class="group flex flex-col">
+              <div class="flex flex-col gap-4">
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full aspect-[4/3] sm:aspect-[5/4]">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" src="./assets/img/image/image-17.webp" alt="Cinematic wedding film still by Jyoti Studio And Photography" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" src="./assets/img/image/image-18.webp" alt="Cinematic wedding film still, image 2" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" src="./assets/img/image/image-19.webp" alt="Cinematic wedding film still, image 3" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" src="./assets/img/image/image-21.webp" alt="Cinematic wedding film still, image 4" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" src="./assets/img/image/image-22.webp" alt="Cinematic wedding film still, image 5" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" src="./assets/img/image/image-24.webp" alt="Cinematic wedding film still, image 6" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="block text-base font-secondary font-semibold text-white">Cinematic Wedding Films</span>
+                </div>
+              </div>
+            </li>
+
+            <!-- Maternity Photography -->
+            <li class="group flex flex-col">
+              <div class="flex flex-col gap-4">
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full aspect-[4/3] sm:aspect-[5/4]">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" src="https://images-pw.pixieset.com/site/BAxvyK/nV0zGD/096A1200-0fe740b1-1000.jpg" alt="Maternity photography by Jyoti Studio And Photography" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://images-pw.pixieset.com/site/BAxvyK/63b48o/SHV-07-efd57c06-1000.JPG" alt="Maternity photography, image 2" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://images-pw.pixieset.com/site/BAxvyK/rz3A7V/SHV-514-1339e077-1000.JPG" alt="Maternity photography, image 3" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://images-pw.pixieset.com/site/BAxvyK/69nW5V/SUSH0622-a9ebf37f-1000.JPG" alt="Maternity photography, image 4" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="block text-base font-secondary font-semibold text-white">Maternity Photography</span>
+                </div>
+              </div>
+            </li>
+
+            <!-- Baby & Kids Photography -->
+            <li class="group flex flex-col">
+              <div class="flex flex-col gap-4">
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full aspect-[4/3] sm:aspect-[5/4]">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" src="https://images-pw.pixieset.com/site/BAxvyK/dqOKL1/NewbornPhotoshootbyImpresioStudio3837-4ba737c7-1000.jpg" alt="Baby and kids photography by Jyoti Studio And Photography" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://images-pw.pixieset.com/site/BAxvyK/pDvXAX/NewbornPhotoshootbyImpresioStudio3871-9ecd0ddf-1000.jpg" alt="Baby and kids photography, image 2" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://images-pw.pixieset.com/site/BAxvyK/4L67DL/NewbornPhotoshootbyImpresioStudio3916-df15be3a-1000.jpg" alt="Baby and kids photography, image 3" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://images-pw.pixieset.com/site/BAxvyK/LM04Q9/NewbornPhotoshootbyImpresioStudio3925-f4d6b3f8-2500.jpg" alt="Baby and kids photography, image 4" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="block text-base font-secondary font-semibold text-white">Baby &amp; Kids Photography</span>
+                </div>
+              </div>
+            </li>
+
+            <!-- Event Photography -->
+            <li class="group flex flex-col">
+              <div class="flex flex-col gap-4">
+                <div class="overflow-hidden rounded-xl bg-gray-100 relative">
+                  <div class="swiper projectSwiper w-full h-full aspect-[4/3] sm:aspect-[5/4]">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" src="https://images-pw.pixieset.com/site/BAxvyK/E3bpv6/WhatsAppImage2026-09-27at5.42.49PM-ccbdf079-1000.jpeg" alt="Event photography by Jyoti Studio And Photography" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://images-pw.pixieset.com/site/BAxvyK/beZOJJ/WhatsAppImage2026-09-27at5.42.42PM1-77ff7968-1000.jpeg" alt="Event photography, image 2" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://images-pw.pixieset.com/site/BAxvyK/9zZ8XA/BirthdayPhotoshootbyImpresioStudioJune2026101-241c1d7a-1000.JPG" alt="Event photography, image 3" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                      <div class="swiper-slide relative">
+                        <img class="w-full h-full object-cover" decoding="async" loading="lazy" src="https://images-pw.pixieset.com/site/BAxvyK/yD63A4/ABirthdayPhotoshootbyImpresioStudioJune20267-2684f41a-1000.JPG" alt="Event photography, image 4" />
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/50"></div>
+                      </div>
+                    </div>
+                    <div class="swiper-pagination !bottom-3"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="block text-base font-secondary font-semibold text-white">Event Photography</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ 4. WHY CHOOSE US ============ -->
+      <section
+        id="why-us"
+        aria-labelledby="why-heading"
+        class="py-28 px-4 sm:px-6 lg:px-8"
+      >
+        <div class="max-w-7xl mx-auto">
+          <!-- Header -->
+          <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
+            <img src="https://framerusercontent.com/images/MJu5JNt0cYqpgD4mSOL48DCNmqA.png?scale-down-to=1024&width=3168&height=1344" alt="" aria-hidden="true" class="mx-auto w-56 sm:w-72 h-auto" loading="lazy" decoding="async" />
+            <h2
+              id="why-heading"
+              class="font-primary reveal-text text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-[#5a3326] leading-tight tracking-normal mt-3"
+            >
+              Made Around Your Story
+            </h2>
+            <p class="text-gray-600 text-base font-secondary leading-relaxed mt-5">
+              From the equipment we use to the way we treat you,  <br>  every detail is built around one goal: memories you can trust and relive for years.
+            </p>
+          </div>
+
+          <!--
+            Mobile order: first three USPs, then the image, then the last three USPs.
+            Desktop order: left USPs | image | right USPs.
+          -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-[1fr_minmax(0,420px)_1fr] gap-10 lg:gap-10 xl:gap-16 items-center"
+          >
+            <!-- Left features (mobile: top) -->
+            <ul class="order-1 flex flex-col gap-10 list-none p-0 m-0">
+              <li class="flex items-start gap-5">
+                <span class="flex-none size-14 rounded-2xl bg-[#f2ebe0] text-[#5a3326] flex items-center justify-center" aria-hidden="true">
+                  <i class="ri-camera-lens-line text-2xl"></i>
+                </span>
+                <div>
+                  <h3 class="font-secondary text-xl sm:text-[22px] font-medium text-[#5a3326] leading-snug">
+                    Experienced Lead Photographer
+                  </h3>
+                  <p class="font-secondary text-gray-600 text-base leading-relaxed mt-2">
+                    Our founder personally photographs every wedding, drawing on years of experience across traditions and venues.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-5">
+                <span class="flex-none size-14 rounded-2xl bg-[#f2ebe0] text-[#5a3326] flex items-center justify-center" aria-hidden="true">
+                  <i class="ri-heart-3-line text-2xl"></i>
+                </span>
+                <div>
+                  <h3 class="font-secondary text-xl sm:text-[22px] font-medium text-[#5a3326] leading-snug">
+                    Personalised Shoot Planning
+                  </h3>
+                  <p class="font-secondary text-gray-600 text-base leading-relaxed mt-2">
+                    Every plan is shaped around your story, your families and your venues, never a one-size-fits-all package.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-5">
+                <span class="flex-none size-14 rounded-2xl bg-[#f2ebe0] text-[#5a3326] flex items-center justify-center" aria-hidden="true">
+                  <i class="ri-film-line text-2xl"></i>
+                </span>
+                <div>
+                  <h3 class="font-secondary text-xl sm:text-[22px] font-medium text-[#5a3326] leading-snug">
+                    Cinematic Storytelling
+                  </h3>
+                  <p class="font-secondary text-gray-600 text-base leading-relaxed mt-2">
+                    Photos and films that flow together as one story, with emotion first and perfection second.
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Image (mobile: middle) -->
+            <div class="order-2 relative flex justify-center">
+              <div
+                class="relative w-full max-w-[320px] sm:max-w-sm lg:max-w-none h-[420px] sm:h-[500px] rounded-[200px] overflow-hidden ring-1 ring-[#5a3326]/15 shadow-xl"
+              >
+                <img
+                  src="https://static.wixstatic.com/media/a2c0e0_5c86f3f9e2534c4797352ba6fc0de465~mv2.jpg/v1/fill/w_1200,h_1720,al_t,q_85,enc_avif,quality_auto/a2c0e0_5c86f3f9e2534c4797352ba6fc0de465~mv2.jpg"
+                  alt="A candid wedding moment captured by Jyoti Studio And Photography"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </div>
+
+            <!-- Right features (mobile: bottom) -->
+            <ul class="order-3 flex flex-col gap-10 list-none p-0 m-0">
+              <li class="flex items-start gap-5">
+                <span class="flex-none size-14 rounded-2xl bg-[#f2ebe0] text-[#5a3326] flex items-center justify-center" aria-hidden="true">
+                  <i class="ri-camera-3-line text-2xl"></i>
+                </span>
+                <div>
+                  <h3 class="font-secondary text-xl sm:text-[22px] font-medium text-[#5a3326] leading-snug">
+                    Premium Cameras &amp; Lighting
+                  </h3>
+                  <p class="font-secondary text-gray-600 text-base leading-relaxed mt-2">
+                    Professional-grade gear delivers sharp, true-to-life results in any light, indoors or outdoors.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-5">
+                <span class="flex-none size-14 rounded-2xl bg-[#f2ebe0] text-[#5a3326] flex items-center justify-center" aria-hidden="true">
+                  <i class="ri-hand-heart-line text-2xl"></i>
+                </span>
+                <div>
+                  <h3 class="font-secondary text-xl sm:text-[22px] font-medium text-[#5a3326] leading-snug">
+                    Calm, Guided Experience
+                  </h3>
+                  <p class="font-secondary text-gray-600 text-base leading-relaxed mt-2">
+                    Gentle direction without pressure keeps you present, so every pose feels natural.
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-5">
+                <span class="flex-none size-14 rounded-2xl bg-[#f2ebe0] text-[#5a3326] flex items-center justify-center" aria-hidden="true">
+                  <i class="ri-time-line text-2xl"></i>
+                </span>
+                <div>
+                  <h3 class="font-secondary text-xl sm:text-[22px] font-medium text-[#5a3326] leading-snug">
+                    On-Time Delivery
+                  </h3>
+                  <p class="font-secondary text-gray-600 text-base leading-relaxed mt-2">
+                    Carefully edited galleries and films arrive on the date we promise.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 5. SHOWREEL ============ -->
+      <section id="showreel" aria-label="Studio showreel" class="w-full overflow-hidden relative h-[80vh]">
+        <video
+          class="w-full h-full object-cover"
+          src="https://video.wixstatic.com/video/a2c0e0_efcfe8320ed4451ca12157e4a70e385f/1080p/mp4/file.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-hidden="true"
+        ></video>
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+          <h2 class="font-primary text-4xl sm:text-5xl md:text-6xl text-[#f3e9d8] leading-tight">
+            Stories in Motion
+          </h2>
+          <p class="mt-6 max-w-2xl text-base font-secondary text-[#f3e9d8]/90 leading-relaxed">
+            Our cinematic films turn your celebration into a story that feels as beautiful as the day itself. From quiet, fleeting emotions to grand moments of joy, each film preserves the smiles and memories you will want to relive for years.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ 6. REAL LOVE STORIES ============ -->
+      <section
+        id="love-stories"
+        aria-labelledby="love-stories-heading"
+        class="py-28 px-4 sm:px-6 lg:px-8"
+      >
+        <div class="max-w-7xl mx-auto">
+          <div class="max-w-3xl mx-auto text-center mb-4">
+            <img
+              src="./assets/img/misc/pattern-divider.png"
+              alt=""
+              aria-hidden="true"
+              class="mx-auto w-64 sm:w-80 opacity-80"
+            />
+          </div>
+
+          <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+            <h2
+              id="love-stories-heading"
+              class="font-primary reveal-text text-3xl sm:text-4xl md:text-5xl font-medium text-[#5a3326] leading-tight tracking-wide uppercase"
+            >
+              Real Love Stories
+            </h2>
+            <p class="text-gray-500 text-sm font-secondary tracking-widest uppercase mt-4">
+              Moments of &ldquo;I do&rdquo;, captured for you
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
+            <article class="text-center">
+              <div class="aspect-[4/5] overflow-hidden mb-6">
+                <img
+                  src="https://static.wixstatic.com/media/c33238_436b04838bee47c494f5411f51360e99~mv2.jpg/v1/fill/w_716,h_958,fp_0.51_0.44,q_90,enc_avif,quality_auto/c33238_436b04838bee47c494f5411f51360e99~mv2.jpg"
+                  alt="Gaurav and Arti celebrating their silver anniversary"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="font-primary text-2xl sm:text-3xl text-[#5a3326] mb-3">
+                Gaurav <span class="font-secondary">&amp;</span> Arti
+              </h3>
+              <p class="text-gray-600 text-base font-secondary leading-relaxed">
+                Gaurav and Arti marked 25 years of love, laughter and life together with a two-day silver anniversary celebration at their home in Bandra. It was a renewal of an old promise and the start of a new one.
+              </p>
+            </article>
+
+            <article class="text-center">
+              <div class="aspect-[4/5] overflow-hidden mb-6">
+                <img
+                  src="https://static.wixstatic.com/media/c33238_a7a774eb356b49318f5bd95432bb86fc~mv2.jpg/v1/fill/w_716,h_958,fp_0.43_0.19,q_90,enc_avif,quality_auto/c33238_a7a774eb356b49318f5bd95432bb86fc~mv2.jpg"
+                  alt="Yuvraj and Saumya at their Punjabi wedding in Juhu"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="font-primary text-2xl sm:text-3xl text-[#5a3326] mb-3">
+                Yuvraj <span class="font-secondary">&amp;</span> Saumya
+              </h3>
+              <p class="text-gray-600 text-base font-secondary leading-relaxed">
+                Five days of pure magic. Yuvraj and Saumya's Punjabi wedding in Juhu blended family traditions with a seaside setting, and left behind a whirlwind of emotion, laughter and unforgettable moments.
+              </p>
+            </article>
+
+            <article class="text-center">
+              <div class="aspect-[4/5] overflow-hidden mb-6">
+                <img
+                  src="https://static.wixstatic.com/media/c33238_a7a774eb356b49318f5bd95432bb86fc~mv2.jpg/v1/fill/w_716,h_958,fp_0.43_0.19,q_90,enc_avif,quality_auto/c33238_a7a774eb356b49318f5bd95432bb86fc~mv2.jpg"
+                  alt="Sandra and Sangharsh at their wedding in Powai"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <h3 class="font-primary text-2xl sm:text-3xl text-[#5a3326] mb-3">
+                Sandra <span class="font-secondary">&amp;</span> Sangharsh
+              </h3>
+              <p class="text-gray-600 text-base font-secondary leading-relaxed">
+                Two cultures, two families and endless joy came together in Powai. The celebration began with a colourful poolside haldi and a high-energy cocktail night, and built to a wedding day full of emotion and beauty.
+              </p>
+            </article>
+          </div>
+
+          <div class="text-center mt-12 sm:mt-16">
+            <a
+              href="https://wa.me/918779161415?text=Hi%20Jyoti%20Studio%2C%20I%20loved%20your%20work%20and%20would%20like%20to%20plan%20my%20story%20with%20you."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline font-secondary"
+            >
+              <span>Plan Your Story</span>
+              <span class="btn__icon" aria-hidden="true"><i class="ri-arrow-right-up-line"></i></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 7. ABOUT THE PHOTOGRAPHER ============ -->
+      <section
+        id="about"
+        aria-labelledby="about-heading"
+        class="relative overflow-hidden py-28 px-4 sm:px-6 lg:px-8 bg-[#3a0d12]"
+      >
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="order-2 lg:order-1 text-center lg:text-left">
+            <span class="font-secondary text-base font-medium text-[#e8c9a0] tracking-wide">Behind the Lens</span>
+
+            <h2
+              id="about-heading"
+              class="font-primary reveal-text text-4xl sm:text-5xl md:text-6xl font-medium text-white leading-tight tracking-normal mt-4 mb-6"
+            >
+              Hi, I'm Bala Chaudhari.
+            </h2>
+
+            <p class="text-white/85 text-base font-secondary leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8">
+              I am the founder and lead photographer of the studio, and on your wedding day I am also your calm presence and built-in support system. I guide gently and tell your story with intention. I will never pull you out of the experience, but I will step in when needed to create space, ease nerves and manage the timeline, so you can stay fully present in the day.
+            </p>
+
+            <a
+              href="https://wa.me/918779161415?text=Hi%20Jyoti%20Studio%2C%20I%20would%20like%20to%20enquire%20about%20a%20photography%20session."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-light font-secondary"
+            >
+              <span>Begin Your Inquiry</span>
+              <span class="btn__icon" aria-hidden="true"><i class="ri-arrow-right-up-line"></i></span>
+            </a>
+          </div>
+
+          <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+            <div class="relative w-full max-w-md aspect-[4/5] rounded-t-[999px] overflow-hidden ring-1 ring-white/15">
+              <img
+                src="./assets/img/misc/bala-chaudhari.webp"
+                alt="Bala Chaudhari, founder and lead photographer at Jyoti Studio And Photography"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 8. TESTIMONIALS ============ -->
+      <style>
+        #testimonials .testi-track {
+          display: flex;
+          gap: 24px;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          scrollbar-width: none;
+          padding: 0 4vw;
+          scroll-padding: 0 4vw;
+        }
+        #testimonials .testi-track::-webkit-scrollbar { display: none; }
+        #testimonials .testi-card {
+          display: flex;
+          flex-direction: column;
+          flex: none;
+          width: 86vw;
+          max-width: 380px;
+          min-height: 280px;
+          padding: 30px 32px;
+          border: 1px solid rgba(90, 51, 38, 0.2);
+          border-radius: 20px;
+          background: #f3e9d8;
+          scroll-snap-align: start;
+        }
+        #testimonials .testi-avatar {
+          position: relative;
+          overflow: hidden;
+          flex: none;
+          width: 56px;
+          height: 56px;
+          border-radius: 50%;
+        }
+        #testimonials .testi-avatar img {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        #testimonials .testi-dots {
+          display: inline-flex;
+          gap: 8px;
+          padding: 10px 14px;
+          border: 1px solid #5a3326;
+          border-radius: 999px;
+        }
+        #testimonials .testi-dots button {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #d8c6a8;
+          transition: background 0.3s;
+        }
+        #testimonials .testi-dots button.is-active { background: #8d0714; }
+        /* font-family comes from the font-primary class on the element */
+        #testimonials .testi-big-text {
+          font-size: 10vw;
+          font-weight: 500;
+          line-height: 1;
+          white-space: nowrap;
+          background: linear-gradient(180deg, rgba(90, 51, 38, 0.24) 12%, rgba(90, 51, 38, 0.05) 80%);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+        }
+      </style>
+
+      <section
+        id="testimonials"
+        aria-labelledby="testimonials-heading"
+        class="w-full overflow-hidden py-28"
+      >
+        <div class="relative mx-auto w-[92%] max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p class="testi-big-text font-primary text-center" aria-hidden="true">testimonials</p>
+        </div>
+
+        <div class="relative -mt-[3vw] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12 sm:mb-16">
+          <h2
+            id="testimonials-heading"
+            class="font-primary reveal-text text-3xl sm:text-4xl md:text-5xl font-medium text-[#5a3326] leading-tight tracking-normal"
+          >
+            Loved by Our Clients
+          </h2>
+        </div>
+
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-card">
+            <div class="flex items-center gap-3">
+              <i class="ri-double-quotes-r text-[22px] text-[#8d0714]" aria-hidden="true"></i>
+              <h3 class="font-secondary text-[20px] font-medium text-[#5a3326]">Beyond Beautiful</h3>
+            </div>
+            <p class="mt-4 text-[15px] font-secondary leading-[1.75] text-[#2a2a2a]">&ldquo;They didn't just take our wedding photos. They captured exactly how the day felt, and every frame still gives us goosebumps.&rdquo;</p>
+            <div class="mt-auto flex items-center gap-4 pt-6">
+              <div class="testi-avatar">
+                <img src="./assets/img/misc/love-sandra-sangharsh.jpg" alt="Sandra and Sangharsh" loading="lazy" decoding="async" />
+              </div>
+              <div>
+                <p class="font-secondary text-[15px] font-medium text-[#5a3326]">Sandra &amp; Sangharsh</p>
+                <p class="mt-1 text-[10px] font-secondary font-semibold uppercase tracking-wide text-[#8d0714]">Wedding Clients</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="flex items-center gap-3">
+              <i class="ri-double-quotes-r text-[22px] text-[#8d0714]" aria-hidden="true"></i>
+              <h3 class="font-secondary text-[20px] font-medium text-[#5a3326]">Effortless &amp; Elegant</h3>
+            </div>
+            <p class="mt-4 text-[15px] font-secondary leading-[1.75] text-[#2a2a2a]">&ldquo;From the first call to the final gallery, everything felt calm and easy. The team made us comfortable in front of the camera.&rdquo;</p>
+            <div class="mt-auto flex items-center gap-4 pt-6">
+              <div class="testi-avatar">
+                <img src="./assets/img/misc/love-gaurav-arti.jpg" alt="Gaurav and Arti" loading="lazy" decoding="async" />
+              </div>
+              <div>
+                <p class="font-secondary text-[15px] font-medium text-[#5a3326]">Gaurav &amp; Arti</p>
+                <p class="mt-1 text-[10px] font-secondary font-semibold uppercase tracking-wide text-[#8d0714]">Anniversary Clients</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="flex items-center gap-3">
+              <i class="ri-double-quotes-r text-[22px] text-[#8d0714]" aria-hidden="true"></i>
+              <h3 class="font-secondary text-[20px] font-medium text-[#5a3326]">Pure Magic</h3>
+            </div>
+            <p class="mt-4 text-[15px] font-secondary leading-[1.75] text-[#2a2a2a]">&ldquo;Every photo feels natural and unposed, and our families still talk about it. Our pre-wedding shoot became one of our favourite memories.&rdquo;</p>
+            <div class="mt-auto flex items-center gap-4 pt-6">
+              <div class="testi-avatar">
+                <img src="./assets/img/misc/love-yuvraj-saumya.webp" alt="Yuvraj and Saumya" loading="lazy" decoding="async" />
+              </div>
+              <div>
+                <p class="font-secondary text-[15px] font-medium text-[#5a3326]">Yuvraj &amp; Saumya</p>
+                <p class="mt-1 text-[10px] font-secondary font-semibold uppercase tracking-wide text-[#8d0714]">Pre-Wedding Clients</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="flex items-center gap-3">
+              <i class="ri-double-quotes-r text-[22px] text-[#8d0714]" aria-hidden="true"></i>
+              <h3 class="font-secondary text-[20px] font-medium text-[#5a3326]">Worth Every Moment</h3>
+            </div>
+            <p class="mt-4 text-[15px] font-secondary leading-[1.75] text-[#2a2a2a]">&ldquo;Professional, patient and incredibly talented. Bala and the team went above and beyond so that no important moment of our day was missed.&rdquo;</p>
+            <div class="mt-auto flex items-center gap-4 pt-6">
+              <div class="testi-avatar">
+                <img src="./assets/img/misc/testimonial.webp" alt="Riya and Mohit" loading="lazy" decoding="async" />
+              </div>
+              <div>
+                <p class="font-secondary text-[15px] font-medium text-[#5a3326]">Riya &amp; Mohit</p>
+                <p class="mt-1 text-[10px] font-secondary font-semibold uppercase tracking-wide text-[#8d0714]">Wedding Clients</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 flex justify-center">
+          <div class="testi-dots" id="testiDots">
+            <button type="button" class="is-active" aria-label="Go to testimonial 1"></button>
+            <button type="button" aria-label="Go to testimonial 2"></button>
+            <button type="button" aria-label="Go to testimonial 3"></button>
+            <button type="button" aria-label="Go to testimonial 4"></button>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        (function () {
+          var track = document.getElementById('testiTrack');
+          var dots = document.querySelectorAll('#testiDots button');
+          if (!track || !dots.length) return;
+          var cards = track.querySelectorAll('.testi-card');
+          var START = 1; // slide 2 active on load
+          function step() {
+            return cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : 0;
+          }
+          function setActive(i) {
+            dots.forEach(function (d, n) { d.classList.toggle('is-active', n === i); });
+          }
+          function update() {
+            var max = track.scrollWidth - track.clientWidth;
+            if (max <= 2) { setActive(START); return; }
+            var s = step();
+            var i = track.scrollLeft >= max - 2 ? dots.length - 1 : Math.round(track.scrollLeft / (s || 1));
+            setActive(Math.max(0, Math.min(dots.length - 1, i)));
+          }
+          track.addEventListener('scroll', update, { passive: true });
+          dots.forEach(function (d, n) {
+            d.addEventListener('click', function () {
+              track.scrollTo({ left: step() * n, behavior: 'smooth' });
+            });
+          });
+          function start() {
+            track.scrollLeft = step() * START;
+            update();
+          }
+          start();
+          window.addEventListener('load', start);
+        })();
+      </script>
+
+      <!-- ============ 9. CALL TO ACTION (before footer) ============ -->
+      <section
+        id="inquiry"
+        aria-labelledby="cta-heading"
+        class="py-28 lg:py-24 px-4 sm:px-6 lg:px-8"
+      >
+        <div class="max-w-5xl mx-auto rounded-3xl bg-[#3a0d12] px-6 py-12 sm:px-12 sm:py-16 text-center">
+          <h2
+            id="cta-heading"
+            class="font-primary text-3xl sm:text-4xl md:text-5xl font-medium text-white leading-tight"
+          >
+            Let's Tell Your Story
+          </h2>
+
+          <p class="font-secondary text-base sm:text-lg text-white/85 leading-relaxed max-w-xl mx-auto mt-4">
+            Dates fill up fast during wedding season.<br class="hidden sm:block" />
+            Tell us about your celebration and we will get back to you.
+          </p>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="https://wa.me/918779161415?text=Hi%20Jyoti%20Studio%2C%20I%20would%20like%20to%20book%20a%20session.%20Please%20share%20your%20availability%20and%20packages."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-light font-secondary w-full max-w-[240px] sm:w-auto"
+            >
+              <span>Book Now</span>
+              <span class="btn__icon" aria-hidden="true"><i class="ri-arrow-right-up-line"></i></span>
+            </a>
+            <a
+              href="tel:+918779161415"
+              class="btn btn-outline-light font-secondary w-full max-w-[240px] sm:w-auto"
+            >
+              <span>Call Us</span>
+              <span class="btn__icon" aria-hidden="true"><i class="ri-arrow-right-up-line"></i></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 10. CONTACT / FOOTER ============ -->
+      <section id="contact" aria-label="Contact details" class="w-full bg-[#f3e9d8] border-y border-[#5a3326] text-[#5a3326]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+          <!-- Address -->
+          <div class="flex flex-col items-center text-center px-5 pt-16 pb-12 border-b md:border-r lg:border-b-0 border-[#5a3326]">
+            <svg class="h-6 w-6 [&_path]:fill-[#5a3326]" preserveAspectRatio="xMidYMid meet" viewBox="53.5 36.5 93 127" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
+              <g>
+                <path d="M99.999 163.5l-3.25-3.895C94.986 157.487 53.5 107.468 53.5 82.916 53.5 57.323 74.359 36.5 99.999 36.5c25.644 0 46.501 20.823 46.501 46.416 0 24.551-41.483 74.571-43.252 76.688l-3.249 3.896zm0-118.56c-20.978 0-38.046 17.036-38.046 37.977 0 16.359 25.019 51.015 38.046 67.305 13.029-16.29 38.048-50.946 38.048-67.305 0-20.942-17.068-37.977-38.048-37.977z"></path>
+                <path d="M99.999 101.658c-10.351 0-18.775-8.407-18.775-18.741 0-10.335 8.424-18.743 18.775-18.743 10.353 0 18.777 8.408 18.777 18.743 0 10.333-8.424 18.741-18.777 18.741zm0-29.046c-5.69 0-10.32 4.621-10.32 10.304 0 5.68 4.63 10.303 10.32 10.303 5.692 0 10.324-4.622 10.324-10.303 0-5.682-4.632-10.304-10.324-10.304z"></path>
+              </g>
+            </svg>
+            <h3 class="font-primary text-xl leading-tight mt-3">Visit Us</h3>
+            <address class="not-italic font-secondary text-base leading-relaxed mt-2 max-w-xs">
+              R Galleria, Runwal Garden,<br />Dombivli East, Thane,<br />Maharashtra 421204
+            </address>
+          </div>
+
+          <!-- Phone -->
+          <div class="flex flex-col items-center text-center px-5 pt-16 pb-12 border-b lg:border-r lg:border-b-0 border-[#5a3326]">
+            <svg class="h-6 w-6 [&_path]:fill-[#5a3326]" preserveAspectRatio="xMidYMid meet" viewBox="35 56 130 88" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
+              <g>
+                <path d="M66.248 47.383c2.234 0 4.783.813 6.746 3.742 5.289 7.88 10.39 15.304 13.215 20.359.956 1.715 1.884 6.569-1.238 10.083-2.696 3.029-5.074 3.772-6.511 5.984-.985 1.524-2.11 4.931-.259 8.848 2.213 4.678 4.913 8.52 10.838 14.54 6.018 5.917 9.859 8.615 14.546 10.829 1.53.722 2.984.99 4.276.99 2.019 0 3.647-.651 4.573-1.249 2.213-1.434 2.958-3.812 5.989-6.507 1.827-1.621 4.014-2.15 5.935-2.15 1.779 0 3.33.454 4.152.916 5.057 2.82 12.484 7.919 20.372 13.203 5.532 3.707 3.515 9.499 2.736 11.32-.783 1.821-4.788 7.847-13.4 12.352-2.37 1.239-5.497 1.974-9.288 1.974-11.935 0-30.424-7.304-52.356-29.225-28.895-28.88-32.402-51.787-27.261-61.607 4.506-8.61 10.536-12.613 12.36-13.392.854-.368 2.589-1.01 4.575-1.01zm0-8.383c-3.278 0-6.106.923-7.9 1.699C54.8 42.211 47.294 47.555 41.88 57.9c-6.765 12.922-3.295 39.381 28.762 71.419C98.22 156.883 118.998 161 128.929 161c5.024 0 9.457-.987 13.175-2.93 10.331-5.404 15.687-12.899 17.222-16.475 3.579-8.37 1.312-16.839-5.772-21.589-1.216-.813-2.421-1.623-3.606-2.42-6.566-4.414-12.769-8.585-17.35-11.141-2.239-1.252-5.244-1.975-8.238-1.977-4.382 0-8.36 1.473-11.504 4.264-2.088 1.855-3.389 3.574-4.34 4.827-.196.259-.44.582-.628.813h-.027c-.197 0-.43-.062-.694-.187-3.482-1.644-6.597-3.675-12.199-9.178-5.508-5.6-7.54-8.714-9.185-12.193-.152-.321-.191-.558-.189-.718.231-.188.557-.433.817-.63 1.255-.95 2.973-2.249 4.826-4.33 5.306-5.974 5.143-14.623 2.3-19.731-2.579-4.614-6.782-10.857-11.234-17.465-.772-1.148-1.557-2.312-2.346-3.487C76.736 41.648 71.866 39 66.248 39z"></path>
+              </g>
+            </svg>
+            <h3 class="font-primary text-xl leading-tight mt-3">Call Us</h3>
+            <a href="tel:+918779161415" class="font-secondary text-base mt-2 hover:text-[#8d0714] transition-colors duration-300">
+              +91 87791 61415
+            </a>
+          </div>
+
+          <!-- Email -->
+          <div class="flex flex-col items-center text-center px-5 pt-16 pb-12 border-b md:border-r lg:border-b-0 border-[#5a3326]">
+            <svg class="h-6 w-6 [&_path]:fill-[#5a3326]" preserveAspectRatio="xMidYMid meet" viewBox="42 39.499 116 121" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
+              <g>
+                <path d="M35 56v88h130V56H35zm64.879 58.87L49.15 64.499h101.455L99.879 114.87zM72.191 99.311l-28.755 30.025V70.757l28.755 28.554zm6.009 5.967l21.679 21.525 21.677-21.525 28.93 30.224H49.254L78.2 105.278zm49.364-5.967l29-28.796v59.092l-29-30.296z"></path>
+              </g>
+            </svg>
+            <h3 class="font-primary text-xl leading-tight mt-3">Email Us</h3>
+            <a href="mailto:info@jyotistudio.com" class="font-secondary text-base mt-2 hover:text-[#8d0714] transition-colors duration-300 break-all">
+              info@jyotistudio.com
+            </a>
+          </div>
+
+          <!-- Social -->
+          <div class="flex flex-col items-center text-center px-5 pt-16 pb-12">
+            <svg class="h-6 w-6 [&_path]:fill-[#5a3326]" preserveAspectRatio="xMidYMid meet" viewBox="42 39.499 116 121" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
+              <g>
+                <path d="M153.456 94.317c-3.926-5.122-9.922-7.943-16.878-7.943h-12.117c4.984-10.908 5.154-26.807 1.188-36.237-2.887-6.862-7.829-10.638-13.919-10.638-1.652 0-3.381.29-5.14.855-8.689 2.802-9.015 9.724-9.303 15.83-.42 8.874-1.056 21.923-23.628 38.773v-8.465H42v72.826h31.66v-9.008c5.418 4.908 13.13 10.189 21.245 10.189h36.611c7.637 0 15.169-5.777 17.152-13.15l8.222-30.59c2.272-8.452 1.021-16.634-3.434-22.442zm-88.219 56.579H50.423V94.92h14.814v55.976zm83.517-36.324l-8.222 30.592c-.989 3.685-5.201 6.911-9.015 6.911H94.905c-7.958 0-17.306-9.198-21.245-13.896v-32.876c30.727-20.874 31.546-38.253 32.042-48.721.304-6.46.663-7.302 3.472-8.211.922-.297 1.784-.447 2.557-.447 2.555 0 4.622 1.844 6.152 5.48 4.2 9.986 2.012 27.905-4.183 34.236l-7.003 7.157h29.88c4.339 0 7.865 1.605 10.192 4.644 2.849 3.716 3.572 9.227 1.985 15.131z"></path>
+              </g>
+            </svg>
+            <h3 class="font-primary text-xl leading-tight mt-3">Follow Us</h3>
+            <div class="flex items-center gap-3 mt-3">
+              <!-- TODO: replace the three links below with the studio's real profile URLs -->
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Jyoti Studio And Photography on Facebook"
+                 class="size-10 rounded-full bg-[#1877f2] text-white flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                <i class="ri-facebook-fill text-lg" aria-hidden="true"></i>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Jyoti Studio And Photography on YouTube"
+                 class="size-10 rounded-full bg-[#ff0000] text-white flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                <i class="ri-youtube-fill text-lg" aria-hidden="true"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Jyoti Studio And Photography on Instagram"
+                 class="size-10 rounded-full bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5] text-white flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                <i class="ri-instagram-line text-lg" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-[#5a3326] px-6 py-4 flex flex-col items-center gap-1 md:flex-row md:justify-between font-secondary text-sm text-[#5a3326]">
+          <p>&copy; 2026 Jyoti Studio And Photography. All rights reserved.</p>
+          <p>Designed &amp; Developed by <span class="font-semibold">Renoble</span></p>
+        </div>
+      </section>
+    </div>
+
+
+    <!-- ============ OFFER POPUP ============ -->
+    <div id="offerModal" class="offer font-secondary" role="dialog" aria-modal="true" aria-labelledby="offerTitle" hidden>
+      <div class="offer__box">
+        <div class="offer__photo">
+          <img src="https://static.wixstatic.com/media/c33238_abbe8937a4f5434bbcc6f026213e37a7~mv2.jpg/v1/fill/w_788,h_1400,fp_0.53_0.32,q_90,enc_avif,quality_auto/c33238_abbe8937a4f5434bbcc6f026213e37a7~mv2.jpg" alt="Expecting mother during a maternity session by Jyoti Studio And Photography" decoding="async" />
+        </div>
+        <button type="button" class="offer__close" id="offerClose" aria-label="Close offer"><i class="ri-close-line" aria-hidden="true"></i></button>
+        <div class="offer__card">
+          <h2 id="offerTitle" class="offer__title font-primary">Discount</h2>
+          <p class="offer__sub font-primary">of the day</p>
+          <p class="offer__text font-secondary">We&rsquo;re offering a special discount on bookings for a limited time.</p>
+          <a
+            href="https://wa.me/918779161415?text=Hi%20Jyoti%20Studio%2C%20I%20saw%20the%20discount%20offer%20and%20would%20like%20to%20know%20more."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline font-secondary mt-6"
+          >
+            <span>Claim Offer</span>
+            <span class="btn__icon" aria-hidden="true"><i class="ri-arrow-right-up-line"></i></span>
+          </a>
+          <p class="offer__note font-secondary">Limited slots this season</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var KEY = 'jyotiOfferDismissed';
+        var modal = document.getElementById('offerModal');
+        var closeBtn = document.getElementById('offerClose');
+        if (!modal || !closeBtn) return;
+
+        function dismissed() { try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; } }
+        function remember() { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+
+        if (dismissed()) { modal.remove(); return; }
+
+        function open() {
+          if (dismissed()) return;
+          modal.hidden = false;
+          modal.classList.add('is-open');
+          document.documentElement.style.overflow = 'hidden';
+          if (window.lenis && typeof window.lenis.stop === 'function') window.lenis.stop();
+          closeBtn.focus();
+        }
+        function close() {
+          remember();
+          modal.classList.remove('is-open');
+          modal.hidden = true;
+          document.documentElement.style.overflow = '';
+          if (window.lenis && typeof window.lenis.start === 'function') window.lenis.start();
+          modal.remove();
+        }
+
+        closeBtn.addEventListener('click', close);
+        modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
+
+        function arm() { setTimeout(open, 2500); }
+        if (window.__loaderDone || !document.getElementById('loader')) { arm(); }
+        else { window.addEventListener('loaderdone', arm, { once: true }); }
+      })();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script>
+
+    <script>
+      (function () {
+        var el = document.getElementById('loader');
+        if (!el) return;
+        var root = document.documentElement;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var q = function (n) { return el.querySelector('[' + n + ']'); };
+        var brand = q('data-l-brand'), white1 = q('data-l-white1'), white2 = q('data-l-white2'), inner = q('data-l-inner');
+
+        var loaded = document.readyState === 'complete';
+        var introDone = false, outroStarted = false;
+
+        root.style.overflow = 'hidden';
+
+        function remove() {
+          el.remove();
+          root.style.overflow = '';
+          if (window.lenis && typeof window.lenis.start === 'function') window.lenis.start();
+          window.__loaderDone = true;
+          window.dispatchEvent(new Event('loaderdone'));
+        }
+
+        // Fallback: no GSAP / reduced motion -> simple fade
+        if (!window.gsap || reduce) {
+          var fade = function () { el.style.transition = 'opacity .4s'; el.style.opacity = '0'; setTimeout(remove, 450); };
+          if (loaded) { fade(); } else { window.addEventListener('load', fade); }
+          setTimeout(function () { if (document.getElementById('loader')) fade(); }, 7000);
+          return;
+        }
+
+        // Split text into characters, each inside an overflow-hidden mask (the "frame")
+        function split(node) {
+          var txt = node.textContent;
+          node.textContent = '';
+          var chars = [];
+          txt.split('').forEach(function (c) {
+            var mask = document.createElement('span');
+            mask.className = 'inline-block overflow-hidden align-bottom pt-[0.15em] pb-[0.25em] -mt-[0.15em] -mb-[0.25em]';
+            var ch = document.createElement('span');
+            ch.className = 'inline-block will-change-transform';
+            ch.textContent = c === ' ' ? '\u00A0' : c;
+            mask.appendChild(ch);
+            node.appendChild(mask);
+            chars.push(ch);
+          });
+          return chars;
+        }
+        var wordL = split(q('data-l-word')), tagL = split(q('data-l-tag'));
+        var wordD = split(q('data-l-word-dark')), tagD = split(q('data-l-tag-dark'));
+
+        // black copy must line up exactly with the light copy: give it the full viewport height
+        function sizeInner() { inner.style.height = el.offsetHeight + 'px'; }
+        sizeInner();
+        window.addEventListener('resize', sizeInner);
+
+        // starting state
+        gsap.set(brand, { yPercent: 100, y: -2 }); // 2px overlap under the white edge = no gap line
+        gsap.set(wordL.concat(tagL), { yPercent: 170 }); // fully below the mask (no peeking tops)
+
+        // INTRO: white shrinks + brand slides up, then letters rise one by one
+        var intro = gsap.timeline({ onComplete: function () { introDone = true; tryOutro(); } });
+        intro
+          .to(white1, { height: 0, duration: 1.1, ease: 'power3.inOut' }, 0.35)
+          .to(brand, { yPercent: 0, y: 0, duration: 1.1, ease: 'power3.inOut' }, 0.35)
+          .to(wordL, { yPercent: 0, duration: 0.9, ease: 'power4.out', stagger: 0.06 }, '-=0.2')
+          .to(tagL, { yPercent: 0, duration: 0.7, ease: 'power4.out', stagger: 0.03 }, '-=0.5')
+          .to({}, { duration: 0.6 }); // hold
+
+        // OUTRO: white rises from the bottom (text turns black), letters slide up out, loader wipes away
+        function tryOutro() {
+          if (outroStarted || !introDone || !loaded) return;
+          outroStarted = true;
+          gsap.timeline({ onComplete: function () { window.removeEventListener('resize', sizeInner); remove(); } })
+            .to(white2, { height: '100%', duration: 0.95, ease: 'power3.inOut' }, 0)
+            .to(wordD.concat(tagD), { yPercent: -160, duration: 0.7, ease: 'power3.in', stagger: 0.035 }, '+=0.1')
+            .to(el, { yPercent: -100, duration: 0.9, ease: 'power3.inOut' }, '+=0.05'); // starts only after every letter has left
+        }
+
+        if (!loaded) { window.addEventListener('load', function () { loaded = true; tryOutro(); }); }
+
+        // safety net so the page never stays covered
+        setTimeout(function () { loaded = true; introDone = true; tryOutro(); }, 8000);
+      })();
+    </script>
+    <script src="./assets/js/swipers.js"></script>
+    <script src="./assets/js/init.js"></script>
+    <script src="./assets/js/text-mask.js"></script>
+    <script src="./assets/js/hero-title.js"></script>
+    <script src="./assets/js/testimonials.js" defer></script>
+
+    <script>
+      (function () {
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (window.gsap && !reduce) {
+          document.querySelectorAll('[data-strip]').forEach(function (t) {
+            var up = t.getAttribute('data-strip') === 'up';
+            var d = parseFloat(t.getAttribute('data-dur')) || 30;
+            gsap.fromTo(t, { yPercent: up ? 0 : -50 }, { yPercent: up ? -50 : 0, duration: d, ease: 'none', repeat: -1 });
+          });
+        }
+      })();
+    </script>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function init() {
+          // Smooth scrolling (Lenis) if nothing else started it
+          if (!window.lenis && !root.classList.contains('lenis') && window.Lenis && !reduce) {
+            var instance = new Lenis({ duration: 1.1, smoothWheel: true });
+            window.lenis = instance;
+            if (window.gsap) {
+              gsap.ticker.add(function (time) { instance.raf(time * 1000); });
+              gsap.ticker.lagSmoothing(0);
+            } else {
+              (function loop(t) { instance.raf(t); requestAnimationFrame(loop); })(0);
+            }
+          }
+
+          var tween = null;
+          function stopTween() { if (tween) { tween.kill(); tween = null; } }
+          window.addEventListener('wheel', stopTween, { passive: true });
+          window.addEventListener('touchstart', stopTween, { passive: true });
+
+          // GSAP-driven scroll to a Y position
+          function goTo(y) {
+            var max = root.scrollHeight - window.innerHeight;
+            y = Math.max(0, Math.min(y, max));
+            stopTween();
+            if (reduce || !window.gsap) { window.scrollTo(0, y); return; }
+            var state = { y: window.pageYOffset };
+            tween = gsap.to(state, {
+              y: y,
+              duration: 1.2,
+              ease: 'power3.inOut',
+              onUpdate: function () {
+                var L = window.lenis;
+                if (L && typeof L.scrollTo === 'function') { L.scrollTo(state.y, { immediate: true, force: true }); }
+                else { window.scrollTo(0, state.y); }
+              },
+              onComplete: function () { tween = null; }
+            });
+          }
+
+          // Every in-page link (navbar, buttons, brand) scrolls to its section
+          document.addEventListener('click', function (e) {
+            var link = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+            if (!link) return;
+            var hash = link.getAttribute('href');
+            if (!hash || hash.length < 2) { if (hash === '#') e.preventDefault(); return; }
+            var target = document.getElementById(hash.slice(1));
+            if (!target) return;
+            e.preventDefault();
+            e.stopPropagation();
+            var y = hash === '#home' ? 0 : target.getBoundingClientRect().top + window.pageYOffset;
+            goTo(y);
+            if (history.pushState) { history.pushState(null, '', hash); }
+          }, true);
+        }
+
+        if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); }
+        else { init(); }
+      })();
+    </script>
+  </body>
+</html>
